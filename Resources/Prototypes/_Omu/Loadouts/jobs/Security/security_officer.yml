@@ -8,3 +8,9 @@
     back:
     - MagazinePistol
   groupBy: "Main weapon"
+  
+# Jumpsuits / Jumpskirts
+- type: loadout
+  id: BlackRedUniform
+  equipment:
+    jumpsuit: ClothingUniformBlackRedSecUniform
