@@ -8,41 +8,76 @@
 #    - id: ClothingOuterHardsuitSpatio
 #    - id: ClothingMaskGasExplorer
 #
-#- type: entityTable
-#  id: LockerFillSalvageSpecialist
-#  table: !type:AllSelector
-#    children:
-#    - id: ClothingBeltUtilityFilled
-#    - id: SurvivalKnife
-#    - id: HandheldGPSBasic
-#    - id: RadioHandheld
-#    - id: AppraisalTool
-#    - id: FireExtinguisher
-#    - id: Flare
-#      prob: 0.3
-#      rolls: !type:ConstantNumberSelector
-#        value: 3
-#
-#- type: entity
-#  id: LockerSalvageSpecialistFilledHardsuit
-#  suffix: Filled, Hardsuit
-#  parent: LockerSalvageSpecialist
-#  components:
-#  - type: EntityTableContainerFill
-#    containers:
-#      entity_storage: !type:AllSelector
-#        children:
-#          - !type:NestedSelector
-#            tableId: FillSalvageSpecialistHardsuitSpatio
-#          - !type:NestedSelector
-#            tableId: LockerFillSalvageSpecialist
-#
-#- type: entity
-#  id: LockerSalvageSpecialistFilled
-#  suffix: Filled
-#  parent: LockerSalvageSpecialist
-#  components:
-#    - type: EntityTableContainerFill
-#      containers:
-#        entity_storage: !type:NestedSelector
-#          tableId: LockerFillSalvageSpecialist
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: LockerSalvageSpecialistFilledHardsuit
+  suffix: Filled, Hardsuit
+  parent: LockerSalvageSpecialist
+  components:
+  - type: StorageFill
+    contents:
+      #- id: ClothingOuterHardsuitSalvage #Goobstation
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      #- id: ClothingShoesBootsMag
+      - id: ClothingMaskGasExplorer
+      - id: ClothingBeltUtilityFilled
+      - id: SurvivalKnife
+      - id: HandheldGPSBasic
+      - id: RadioHandheld
+      - id: SeismicCharge
+        amount: 2
+      - id: Flare
+        prob: 0.3
+      - id: Flare
+        prob: 0.3
+      - id: Flare
+        prob: 0.3
+      # Lavaland Change Start
+      - id: WeaponProtoKineticAccelerator
+      - id: OreBag
+      - id: Pickaxe
+      - id: LavalandJaunter
+      - id: LavalandEquipmentExplorerSuit
+      - id: ShelterCapsule
+      - id: ClothingMaskGasExplorer
+      - id: MineralScanner
+      - id: FlashlightSeclite
+      - id: ClothingEyesGlassesMeson
+      # Lavaland Change End
+      - id: PinpointerSalvage # Omu Salvage Crew Pinpointer
+
+- type: entity
+  id: LockerSalvageSpecialistFilled
+  suffix: Filled
+  parent: LockerSalvageSpecialist
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingEyesGlassesMeson
+      - id: ClothingBeltUtilityFilled
+      - id: SurvivalKnife
+      - id: HandheldGPSBasic
+      - id: RadioHandheld
+      - id: SeismicCharge
+        amount: 2
+      - id: Flare
+        prob: 0.3
+      - id: Flare
+        prob: 0.3
+      - id: Flare
+        prob: 0.3
+      # Lavaland Change Start
+      - id: WeaponProtoKineticAccelerator
+      - id: OreBag
+      - id: Pickaxe
+      - id: LavalandJaunter
+      - id: LavalandEquipmentExplorerSuit
+      - id: ShelterCapsule
+      - id: ClothingMaskGasExplorer
+      - id: MineralScanner
+      - id: FlashlightSeclite
+      # TODO: bluespace shelter capsule
+      # Lavaland Change End
+      - id: PinpointerSalvage # Omu Salvage Crew Pinpointer

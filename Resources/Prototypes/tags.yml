@@ -1278,6 +1278,10 @@
 - type: Tag
   id: SalvageScrap # CargoBounty: BountySalvageScrap
 
+# Omu Station
+- type: Tag 
+  id: SalvagePinpointer
+
 - type: Tag
   id: Scarf # CargoBounty: BountyWarmCloth
 
