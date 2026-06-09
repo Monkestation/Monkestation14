@@ -147,6 +147,29 @@ namespace Content.Server.Database
         /// <param name="updates">The list of all updates to apply to the database.</param>
         Task UpdatePlayTimes(IReadOnlyCollection<PlayTimeUpdate> updates);
 
+        // Monkestation edit start
+        /// <summary>
+        /// Gets the role time exemptions for a player
+        /// </summary>
+        /// <param name="player">The player to get role time exemptions for</param>
+        /// <param name="cancel"></param>
+        /// <returns></returns>
+        Task<List<MonkestationRoleTimeExemption>> GetRoleTimeExemptions(Guid player, CancellationToken cancel);
+
+        /// <summary>
+        /// Gets the role time exemptions for a player
+        /// </summary>
+        /// <param name="player">The player to get role time exemptions for</param>
+        /// <returns></returns>
+        Task<List<MonkestationRoleTimeExemption>> GetRoleTimeExemptions(Guid player);
+
+        /// <summary>
+        /// Sets the exemptions on a player to the specified value. Any missing exemptions are deleted.
+        /// </summary>
+        /// <param name="data">The data to set</param>
+        Task SetRoleTimeExemptions(NetUserId userId, List<MonkestationRoleTimeExemption> data);
+        // Monkestation edit end
+
         #endregion
 
         #region Player Records
@@ -610,6 +633,26 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.UpdatePlayTimes(updates));
         }
+
+        // Monkestation edit start
+        public Task<List<MonkestationRoleTimeExemption>> GetRoleTimeExemptions(Guid player, CancellationToken cancel)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetRoleTimeExemptions(player, cancel));
+        }
+
+        public Task<List<MonkestationRoleTimeExemption>> GetRoleTimeExemptions(Guid player)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetRoleTimeExemptions(player));
+        }
+
+        public Task SetRoleTimeExemptions(NetUserId userId, List<MonkestationRoleTimeExemption> data)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetRoleTimeExemptions(userId, data));
+        }
+        // Monkestation edit end
 
         #endregion
 

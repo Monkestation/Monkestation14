@@ -2,6 +2,7 @@
 
 using Content.Server._Goobstation.Antag;
 using Content.Server._RMC14.LinkAccount; // RMC - Patreon
+using Content.Server._Monkestation.Administration.Managers;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -86,5 +87,9 @@ internal static class ServerContentIoC
         deps.Register<DiscordChatLink>();
         deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
         deps.Register<LinkAccountManager>(); // RMC - Patreon
+
+        // Monkestation start
+        deps.Register<RoleTimeExemptionManager>();
+        // Monkestation end
     }
 }

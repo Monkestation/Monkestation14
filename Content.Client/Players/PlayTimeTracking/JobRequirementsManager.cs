@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Monkestation.Players;
 using Content.Shared.CCVar;
 using Content.Shared.Players;
 using Content.Shared.Players.JobWhitelist;
@@ -31,6 +32,11 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     private readonly List<ProtoId<AntagPrototype>> _antagBans = new();
     private readonly List<string> _jobWhitelists = new();
 
+    // Monkestation start
+    private List<ProtoId<JobPrototype>> _jobExemptions = [];
+    private List<ProtoId<AntagPrototype>> _antagExemptions = [];
+    // Monkestation end
+
     private ISawmill _sawmill = default!;
 
     public event Action? Updated;
@@ -43,6 +49,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         _net.RegisterNetMessage<MsgRoleBans>(RxRoleBans);
         _net.RegisterNetMessage<MsgPlayTime>(RxPlayTime);
         _net.RegisterNetMessage<MsgJobWhitelist>(RxJobWhitelist);
+        _net.RegisterNetMessage<MsgRoleTimeExemptions>(RoleTimeExemptionsRx); // Monkestation - Role time exemptions
 
         _client.RunLevelChanged += ClientOnRunLevelChanged;
     }
@@ -94,6 +101,15 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         _jobWhitelists.AddRange(message.Whitelist);
         Updated?.Invoke();
     }
+
+    // Monkestation Start
+    private void RoleTimeExemptionsRx(MsgRoleTimeExemptions message)
+    {
+        _jobExemptions = message.JobExemptions;
+        _antagExemptions = message.AntagExemptions;
+        Updated?.Invoke();
+    }
+    // Monkestation End
 
     /// <summary>
     /// Check a list of job- and antag prototypes against the current player, for requirements and bans.
@@ -149,6 +165,13 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         if (!CheckWhitelist(job, out reason))
             return false;
 
+        // Monkestation start - Exemptions
+        if (_jobExemptions.Contains(job.ID))
+        {
+            return true;
+        }
+        // Monkestation end
+
         // Check other role requirements
         var reqs = _entManager.System<SharedRoleSystem>().GetRoleRequirements(job);
         if (!CheckRoleRequirements(reqs, profile, out reason))
@@ -175,6 +198,13 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         // Check whitelist requirements
         if (!CheckWhitelist(antag, out reason))
             return false;
+
+        // Monkestation start - Exemptions
+        if (_antagExemptions.Contains(antag.ID))
+        {
+            return true;
+        }
+        // Monkestation end
 
         // Check other role requirements
         var reqs = _entManager.System<SharedRoleSystem>().GetRoleRequirements(antag);

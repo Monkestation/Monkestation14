@@ -1,0 +1,10 @@
+Name: Monkelog
+Order: -2
+Entries:
+- author: cnv41
+  changes:
+  - message: Fixed a minor typo in coffin description.
+    type: Fix
+  id: 1
+  time: '2026-06-09T23:14:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/15

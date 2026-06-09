@@ -29,6 +29,7 @@ public sealed partial class PlayerPanel : FancyWindow
     public event Action? OnLogs;
     public event Action? OnDelete;
     public event Action? OnRejuvenate;
+    public event Action<NetUserId?>? OnRoleExemptions; // Monkestation edit
 
     public NetUserId? TargetPlayer;
     public string? TargetUsername;
@@ -57,6 +58,8 @@ public sealed partial class PlayerPanel : FancyWindow
         LogsButton.OnPressed += _ => OnLogs?.Invoke();
         DeleteButton.OnPressed += _ => OnDelete?.Invoke();
         RejuvenateButton.OnPressed += _ => OnRejuvenate?.Invoke();
+
+        RoleTimeButton.OnPressed += _ => OnRoleExemptions?.Invoke(TargetPlayer); // Monkestation edit
     }
 
     public void SetUsername(string player)
@@ -138,5 +141,6 @@ public sealed partial class PlayerPanel : FancyWindow
         LogsButton.Disabled = !_adminManager.CanCommand("adminlogs");
         RejuvenateButton.Disabled = !_adminManager.HasFlag(AdminFlags.Debug);
         DeleteButton.Disabled = !_adminManager.HasFlag(AdminFlags.Debug);
+        RoleTimeButton.Disabled = !_adminManager.CanCommand("role-time-exemption-panel"); // Monkestation edit
     }
 }

@@ -38,6 +38,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             <Button Name="BanButton" Text="{Loc player-panel-ban}" Disabled="True"/>
             <controls:ConfirmButton Name="RejuvenateButton" Text="{Loc player-panel-rejuvenate}" Disabled="True"/>
             <Button Name="CameraButton" Text="{Loc player-panel-camera}" Disabled="True"/>
+            <Button Name="RoleTimeButton" Text="{Loc player-panel-role-time}" Disabled="True"/> <!-- Monkestation edit -->
            </GridContainer>
        </BoxContainer>
     </BoxContainer>

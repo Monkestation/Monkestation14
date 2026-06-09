@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Goobstation.Antag;
+using Content.Server._Monkestation.Administration.Managers;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -81,6 +82,10 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
 
         [Dependency] private readonly LastRolledAntagManager _lastAntagManager = default!; // Goobstation
+
+        // Monkestation start
+        [Dependency] private readonly RoleTimeExemptionManager _roleTimeExemptionManager = default!;
+        // Monkestation end
 
         public override void PreInit()
         {
@@ -171,6 +176,10 @@ namespace Content.Server.Entry
             _connection.PostInit();
             _multiServerKick.Initialize();
             _cvarCtrl.Initialize();
+
+            // Monkestation Start
+            _roleTimeExemptionManager.Initialize();
+            // Monkestation end
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
