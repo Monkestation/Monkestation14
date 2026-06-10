@@ -65,7 +65,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: clownshot
-  color: yellow
+  color: gold #OmuStation, was yellow
   protoId: BulletClownshot
   fireCost: 40
 
@@ -75,7 +75,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: pulse
-  color: blue
+  color: mediumblue #OmuStation, was blue
   protoId: BulletPulse
   fireCost: 60
 
@@ -85,7 +85,7 @@
   icon:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     state: omnilaser
-  color: blue
+  color: mediumturquoise #OmuStation, was blue
   protoId: BulletDetain
   fireCost: 60
 
@@ -105,7 +105,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: hotshot
-  color: red
+  color: firebrick #OmuStation, was red
   protoId: BulletHotshot
   fireCost: 80
 
@@ -115,7 +115,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: sleepshot
-  color: pink
+  color: rosybrown #OmuStation, was pink
   protoId: BulletSleepshot
   fireCost: 60
 
