@@ -1,10 +1,17 @@
 Name: Monkelog
 Order: -2
 Entries:
-- author: cnv41
+- author: adamsong
   changes:
-  - message: Fixed a minor typo in coffin description.
-    type: Fix
+  - message: Added role exemption panel
+    type: Add
   id: 1
   time: '2026-06-09T23:14:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/15
+- author: Skarletto
+  changes:
+  - message: Added server rules to the guidebook
+    type: Add
+  id: 2
+  time: '2026-13-09T18:42:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/17
