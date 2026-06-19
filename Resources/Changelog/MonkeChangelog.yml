@@ -13,5 +13,12 @@ Entries:
   - message: Added server rules to the guidebook
     type: Add
   id: 2
-  time: '2026-13-09T18:42:00.0000000+00:00'
+  time: '2026-06-13T18:42:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/17
+- author: Gboster-0
+  changes:
+  - message: Changed the orbit menu to be nicer to use
+    type: Tweak
+  id: 3
+  time: '2026-06-19T12:08:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/19
