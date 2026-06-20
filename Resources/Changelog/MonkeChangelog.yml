@@ -22,3 +22,10 @@ Entries:
   id: 3
   time: '2026-06-19T12:08:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/19
+- author: adamsong
+  changes:
+  - message: Small bugfix on the orbit menu
+    type: Tweak
+  id: 4
+  time: '2026-06-20T21:54:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/22
