@@ -29,3 +29,10 @@ Entries:
   id: 4
   time: '2026-06-20T21:54:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/22
+- author: AitorLogedo
+  changes:
+  - message: Slimepeople can now passively slurp up puddles, and clean dirt and footprints off the floor while barefoot, feeding off what they absorb. They also stop leaving their own footprints while doing it. Toggle it with an action.
+    type: Tweak
+  id: 5
+  time: '2026-07-13T20:01:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/24
