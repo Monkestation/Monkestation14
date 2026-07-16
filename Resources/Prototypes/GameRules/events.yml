@@ -131,7 +131,7 @@
   components:
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio: Announce
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -153,7 +153,7 @@
     chaosScore: 40 # Goobstation
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio: Announce
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
     chaos: # Goobstation
