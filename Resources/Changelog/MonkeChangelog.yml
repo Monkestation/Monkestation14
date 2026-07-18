@@ -64,3 +64,10 @@ Entries:
   id: 8
   time: '2026-07-16T13:45:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/52
+- author: adamsong
+  changes:
+  - message: Removed the ability for non admins to use fuckrules
+    type: Removed
+  id: 9
+  time: '2026-07-18T14:12:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/61
