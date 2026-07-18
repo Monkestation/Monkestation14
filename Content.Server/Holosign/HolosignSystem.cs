@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Charges.Components;
+using Content.Shared.Charges.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Coordinates.Helpers;
-using Content.Shared.PowerCell;
+using Content.Shared.Holosign;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Physics; // Goobstation
 using Content.Shared.Power.Components;
 using Content.Shared.Storage;
@@ -13,9 +16,9 @@ using Robust.Shared.Physics.Components; // Goobstation
 
 namespace Content.Server.Holosign;
 
-public sealed class HolosignSystem : EntitySystem
+public sealed partial class HolosignSystem : EntitySystem
 {
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly SharedChargesSystem _charges = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     // Goobstation start
@@ -30,36 +33,34 @@ public sealed class HolosignSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<HolosignProjectorComponent, BeforeRangedInteractEvent>(OnBeforeInteract);
-        SubscribeLocalEvent<HolosignProjectorComponent, ExaminedEvent>(OnExamine);
 
         _physicsQuery = GetEntityQuery<PhysicsComponent>(); // Goobstation
-    }
-
-    private void OnExamine(EntityUid uid, HolosignProjectorComponent component, ExaminedEvent args)
-    {
-        // TODO: This should probably be using an itemstatus
-        // TODO: I'm too lazy to do this rn but it's literally copy-paste from emag.
-        var charges = _powerCell.GetRemainingUses(uid, component.ChargeUse);
-        var maxCharges = _powerCell.GetMaxUses(uid, component.ChargeUse);
-
-        using (args.PushGroup(nameof(HolosignProjectorComponent)))
-        {
-            args.PushMarkup(Loc.GetString("limited-charges-charges-remaining", ("charges", charges)));
-
-            if (charges > 0 && charges == maxCharges)
-            {
-                args.PushMarkup(Loc.GetString("limited-charges-max-charges"));
-            }
-        }
     }
 
     private void OnBeforeInteract(EntityUid uid, HolosignProjectorComponent component, BeforeRangedInteractEvent args)
     {
         // Goob edit start
         if (args.Handled
-            || !args.CanReach // prevent placing out of range
-            || HasComp<StorageComponent>(args.Target)) // if it's a storage component like a bag, we ignore usage so it can be stored
+            || !args.CanReach) // prevent placing out of range
+        // Monkestation edit - remove power cell check
             return;
+
+        // Monkestation edit start - handle charges
+        if (TryComp<HolosignSignComponent>(args.Target, out var existingSign) && existingSign.Projector == uid)
+        {
+            QueueDel(args.Target.Value);
+            args.Handled = true;
+            return;
+        }
+
+        if (HasComp<StorageComponent>(args.Target))
+            return;
+
+        if (!_charges.HasCharges(uid, 1))
+            return;
+        // Monkestation edit end
+
+
 
         // places the holographic sign at the click location, snapped to grid.
         var coords = args.ClickLocation.SnapToGrid(EntityManager);
@@ -82,9 +83,16 @@ public sealed class HolosignSystem : EntitySystem
                         CollisionGroup.HighImpassable)) != 0)
                 return;
         }
-        if (!_powerCell.TryUseCharge(uid, component.ChargeUse, user: args.User)) // if no battery or no charge, doesn't work
+        if (!_charges.TryUseCharge(uid)) // if no battery or no charge, doesn't work - monkestation edit - convert to charges
             return;
         var holoUid = Spawn(component.SignProto, coords);
+
+        // Monkestation edit start - Add HolosignSignComponent
+        var sign = EnsureComp<HolosignSignComponent>(holoUid);
+        sign.Projector = uid;
+        Dirty(holoUid, sign);
+        // Monkestation edit end
+
         // Goob edit end
         var xform = Transform(holoUid);
         // TODO: Just make the prototype anchored
@@ -92,5 +100,33 @@ public sealed class HolosignSystem : EntitySystem
             _transform.AnchorEntity(holoUid, xform); // anchor to prevent any tempering with (don't know what could even interact with it)
 
         args.Handled = true;
+    }
+
+    // Monkestation edit start - Add use in hand to clear signs and handle signs ending
+    [SubscribeLocalEvent]
+    private void OnUseInHand(Entity<HolosignProjectorComponent> ent, ref UseInHandEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var query = EntityQueryEnumerator<HolosignSignComponent>();
+
+        while (query.MoveNext(out var uid, out var sign))
+        {
+            if (sign.Projector == ent.Owner)
+                QueueDel(uid);
+        }
+
+        args.Handled = true;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnSignTerminating(Entity<HolosignSignComponent> ent, ref EntityTerminatingEvent args)
+    {
+        var projector = ent.Comp.Projector;
+        if (!TryComp<LimitedChargesComponent>(projector, out var charges))
+            return;
+
+        _charges.AddCharges((projector.Value, charges, null), 1);
     }
 }
