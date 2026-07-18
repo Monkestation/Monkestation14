@@ -71,3 +71,12 @@ Entries:
   id: 9
   time: '2026-07-18T14:12:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/61
+- author: Sif
+  changes:
+  - message: Flashlights and most handheld lights no longer need batteries to work.
+    type: Tweak
+  - message: Holoprojectors now work like in SS13. You place holograms form a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
+    type: Tweak
+  id: 9
+  time: '2026-07-18T13:50:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/62

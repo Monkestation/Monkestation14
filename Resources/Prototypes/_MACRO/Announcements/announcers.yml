@@ -197,7 +197,7 @@
     RescueImminent:
       path: /Audio/Effects/adminhelp.ogg
 
-- type: msAnnouncer
+- type: announcer
   id: DukeAnnouncer
   sounds:
     Attention:
@@ -219,7 +219,7 @@
     ShuttleDock:
       path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
 
-- type: msAnnouncer
+- type: announcer
   id: InternAnnouncer
   sounds:
     Attention:
@@ -241,7 +241,7 @@
     ShuttleDock:
       path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
 
-- type: msAnnouncer
+- type: announcer
   id: MedbotAnnouncer
   sounds:
     Attention:
@@ -264,7 +264,7 @@
       path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.ogg
 
 
-- type: msAnnouncer
+- type: announcer
   id: DagothAnnouncer
   sounds:
     Attention:
