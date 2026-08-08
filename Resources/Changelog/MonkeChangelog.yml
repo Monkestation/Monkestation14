@@ -87,3 +87,10 @@ Entries:
   id: 11
   time: '2026-07-18T13:50:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/68
+- author: Blumbee
+  changes:
+  - message: Guidebook now contains Spacelaw, Crime List
+    type: Add
+  id: 12
+  time: '2026-08-18T19:32:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/70
