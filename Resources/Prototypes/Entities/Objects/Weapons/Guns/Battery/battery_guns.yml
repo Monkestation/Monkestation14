@@ -1105,6 +1105,9 @@
     startingCharge: 1200 # Goobstation
   - type: StealTarget # Goobstation
     stealGroup: WeaponEnergyShotgun
+  - type: BatterySelfRecharger # Omu, re-readd self-recharging on the e-shotty
+    autoRechargeRate: 28 # This is to compensate for 1050 --> 1200 charge; formerly 24
+    autoRechargePauseTime: 30
 
 - type: entity
   name: energy magnum
