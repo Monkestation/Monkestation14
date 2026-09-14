@@ -8,7 +8,7 @@ Entries:
   id: 1
   time: '2026-06-09T23:14:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/15
-- author: Skarletto
+- author: Skarlet
   changes:
   - message: Added server rules to the guidebook
     type: Add
@@ -57,7 +57,7 @@ Entries:
   id: 8
   time: '2026-07-11T21:08:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/47
-- author: Skarletto
+- author: Skarlet
   changes:
   - message: New, randomized announcer now color the station's radio!
     type: Add
@@ -108,3 +108,10 @@ Entries:
   id: 14
   time: '2026-08-08T07:09:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/83
+- author: Skarlet
+  changes:
+  - message: Added the Duke of Ook to the game (plushie version)!
+    type: Add
+  id: 15
+  time: '2026-09-14T23:20:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/121
