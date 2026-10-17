@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
+using Content.Server._Omu.Preferences;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
 using Content.Server.Spawners.Components;
@@ -34,6 +35,7 @@ namespace Content.Server.GameTicking
 {
     public sealed partial class GameTicker
     {
+        [Dependency] private readonly CharacterQueueSystem _characterQueue = default!; // Omu
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
         [Dependency] private readonly AdminSystem _admin = default!;
@@ -122,7 +124,13 @@ namespace Content.Server.GameTicking
                 if (job == null)
                     continue;
 
-                SpawnPlayer(_playerManager.GetSessionById(player), profiles[player], station, job, false);
+                // Omu start
+                var session = _playerManager.GetSessionById(player);
+                if (!_characterQueue.TryPickCharacter(session, job.Value, out var character))
+                    continue;
+
+                SpawnPlayer(session, character, station, job, false);
+                // Omu end
             }
 
             RefreshLateJoinAllowed();
@@ -140,7 +148,10 @@ namespace Content.Server.GameTicking
             bool lateJoin = true,
             bool silent = false)
         {
-            var character = GetPlayerProfile(player);
+            // Omu start
+            if (!_characterQueue.TryPickCharacter(player, jobId, out var character))
+                return;
+            // Omu end
 
             var jobBans = _banManager.GetJobBans(player.UserId);
             if (jobBans == null || jobId != null && jobBans.Contains(jobId)) //TODO: use IsRoleBanned directly?
@@ -236,8 +247,9 @@ namespace Content.Server.GameTicking
                 restrictedRoles.UnionWith(jobBans);
 
             // Pick best job best on prefs.
+            var pickCharacter = jobId == null; // Omu
             jobId ??= _stationJobs.PickBestAvailableJobWithPriority(station,
-                character.JobPriorities,
+                _characterQueue.GetJobPriorities(player.UserId), // Omu
                 true,
                 restrictedRoles);
             // If no job available, stay in lobby, or if no lobby spawn as observer
@@ -255,6 +267,21 @@ namespace Content.Server.GameTicking
                     Loc.GetString("game-ticker-player-no-jobs-available-when-joining"));
                 return;
             }
+
+            // Omu start
+            if (pickCharacter)
+            {
+                if (!_characterQueue.TryPickCharacter(player, jobId, out var picked))
+                {
+                    if (!LobbyEnabled)
+                        JoinAsObserver(player);
+
+                    return;
+                }
+
+                character = picked;
+            }
+            // Omu end
 
             DoSpawn(player, character, station, jobId, silent, out var mob, out var jobPrototype, out var jobName);
 

@@ -5,6 +5,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <!-- Goob -->
 <ContainerButton xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:lobby="clr-namespace:Content.Goobstation.UIKit.UserInterface.Lobby;assembly=Content.Goobstation.UIKit"
          StyleClasses="HullSlot"
          MinWidth="132">
     <BoxContainer Orientation="Vertical"
@@ -26,6 +27,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                StyleClasses="HullMuted"
                Visible="False"/>
         <Control VerticalExpand="True"/>
+        <!-- Omu start -->
+        <lobby:TintButton Name="ActiveButton"
+                StyleClasses="HullPlate"
+                ToggleMode="True"
+                ToolTip="{Loc 'character-queue-active-tooltip'}"/>
+        <!-- Omu end -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" MinHeight="24">
             <Button Name="DeleteButton"
                     StyleClasses="HullPlate"

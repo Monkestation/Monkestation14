@@ -2,13 +2,12 @@ using Content.Goobstation.Common.Traitor;
 using Content.Goobstation.Common.Traitor.PenSpin;
 using Content.Goobstation.Server.Traitor.PenSpin;
 using Content.Goobstation.Shared.Traitor.PenSpin;
+using Content.Server._Omu.Preferences;
 using Content.Server.PDA.Ringer;
-using Content.Server.Preferences.Managers;
 using Content.Server.Store.Systems;
 using Content.Shared.Mind;
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
-using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Store;
 using Content.Shared.Whitelist;
@@ -24,7 +23,7 @@ public sealed partial class GoobUplinkSystem : GoobCommonUplinkSystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
-    [Dependency] private IServerPreferencesManager _prefs = default!;
+    [Dependency] private CharacterQueueSystem _characterQueue = default!; // Omu
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
 
@@ -93,8 +92,7 @@ public sealed partial class GoobUplinkSystem : GoobCommonUplinkSystem
         if (mind.UserId == null)
             return DefaultPreference;
 
-        var prefs = _prefs.GetPreferences(mind.UserId.Value);
-        if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile
+        if (_characterQueue.GetCurrentCharacter(mind.UserId.Value) is not { } profile // Omu
             || !profile.Loadouts.TryGetValue(AntagTraitorLoadout, out var roleLoadout)
             || !roleLoadout.SelectedLoadouts.TryGetValue(TraitorUplinkGroup, out var selectedLoadouts))
             return DefaultPreference;

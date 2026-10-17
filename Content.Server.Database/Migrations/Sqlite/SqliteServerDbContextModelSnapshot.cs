@@ -1012,6 +1012,35 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("player", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PlayerJobPriority", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("player_job_priority_id");
+
+                    b.Property<string>("JobName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job_name");
+
+                    b.Property<int>("PreferenceId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("preference_id");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("priority");
+
+                    b.HasKey("Id")
+                        .HasName("PK_player_job_priority");
+
+                    b.HasIndex("PreferenceId", "JobName")
+                        .IsUnique();
+
+                    b.ToTable("player_job_priority", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Poll", b =>
                 {
                     b.Property<int>("Id")
@@ -1219,6 +1248,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_id");
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("active");
+
                     b.Property<int>("Age")
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
@@ -1275,6 +1308,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("position");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("INTEGER")
@@ -2281,6 +2318,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("LastSeenHWId");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PlayerJobPriority", b =>
+                {
+                    b.HasOne("Content.Server.Database.Preference", "Preference")
+                        .WithMany("JobPriorities")
+                        .HasForeignKey("PreferenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_player_job_priority_preference_preference_id");
+
+                    b.Navigation("Preference");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Poll", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "CreatedBy")
@@ -2692,6 +2741,8 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.Preference", b =>
                 {
+                    b.Navigation("JobPriorities");
+
                     b.Navigation("Profiles");
                 });
 
