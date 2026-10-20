@@ -65,6 +65,32 @@
     sprite: _Goobstation/Clothing/Neck/Mantle/hosmantle.rsi # Goob Station - mantle resprite
   - type: Clothing
     sprite: _Goobstation/Clothing/Neck/Mantle/hosmantle.rsi # Goob Station - mantle resprite
+  # Omu Begin
+  - type: DeviceNetwork
+    deviceNetId: Wired # :clueless:
+    receiveFrequencyId: SurveillanceCameraSecurity
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    networkSet: true
+    nameSet: True
+    mobile: True  # Goobstation - mobile cameras fix
+    id: Bodycam
+  - type: Eye
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: SurveillanceCameraMicrophone
+    blacklist:
+      components:
+      - SurveillanceCamera
+      - SurveillanceCameraMonitor
+      - RadioSpeaker
+  - type: ActiveListener
+    range: 10
+  - type: ClothingGrantComponent
+    component:
+    - type: StationAiVision
+      range: 4
+  # Omu End
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
