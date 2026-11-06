@@ -3,6 +3,7 @@
 using System.Collections.Frozen;
 using Content.Shared._Starlight.CollectiveMind; // Goobstation - Starlight collective mind port
 using System.Text.RegularExpressions;
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Shared._EinsteinEngines.Language;
 using Content.Shared._EinsteinEngines.Language.Systems;
 using Content.Shared.ActionBlocker;
@@ -44,8 +45,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
-    public static readonly SoundSpecifier DefaultAnnouncementSound
-        = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+    public static readonly ProtoId<AnnouncementSoundPrototype> DefaultAnnouncementSound = "Announce";
 
     public static readonly ProtoId<RadioChannelPrototype> CommonChannel = "Common";
 
@@ -509,6 +509,24 @@ public abstract partial class SharedChatSystem : EntitySystem
         )
     { }
 
+    // Monkestation edit - add this version of the function to take the announcement sound prototype directly
+    /// <summary>
+    /// Dispatches an announcement to all.
+    /// </summary>
+    /// <param name="message">The contents of the message.</param>
+    /// <param name="announcementSound">Sound to play.</param>
+    /// <param name="sender">The sender (Communications Console in Communications Console Announcement).</param>
+    /// <param name="playSound">Play the announcement sound.</param>
+    /// <param name="colorOverride">Optional color for the announcement message.</param>
+    public virtual void DispatchGlobalAnnouncement(
+        string message,
+        ProtoId<AnnouncementSoundPrototype> announcementSound,
+        string? sender = null,
+        bool playSound = true,
+        Color? colorOverride = null
+    )
+    { }
+
     /// <summary>
     /// Dispatches an announcement to all.
     /// </summary>
@@ -517,6 +535,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="playSound">Play the announcement sound.</param>
     /// <param name="announcementSound">Sound to play.</param>
     /// <param name="colorOverride">Optional color for the announcement message.</param>
+    /// <remarks>Prefer the version that takes the announcement sound prototype if passing a sound</remarks>
     public virtual void DispatchGlobalAnnouncement(
         string message,
         string? sender = null,
@@ -524,6 +543,27 @@ public abstract partial class SharedChatSystem : EntitySystem
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null
         )
+    { }
+
+
+    /// <summary>
+    /// Dispatches an announcement to players selected by filter.
+    /// </summary>
+    /// <param name="filter">Filter to select players who will recieve the announcement.</param>
+    /// <param name="message">The contents of the message.</param>
+    /// <param name="announcementSound">Sound to play.</param>
+    /// <param name="source">The entity making the announcement (used to determine the station).</param>
+    /// <param name="sender">The sender (Communications Console in Communications Console Announcement).</param>
+    /// <param name="playSound">Play the announcement sound.</param>
+    /// <param name="colorOverride">Optional color for the announcement message.</param>
+    public virtual void DispatchFilteredAnnouncement(
+        Filter filter,
+        string message,
+        ProtoId<AnnouncementSoundPrototype> announcementSound,
+        EntityUid? source = null,
+        string? sender = null,
+        bool playSound = true,
+        Color? colorOverride = null)
     { }
 
     /// <summary>
@@ -536,6 +576,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="playSound">Play the announcement sound.</param>
     /// <param name="announcementSound">Sound to play.</param>
     /// <param name="colorOverride">Optional color for the announcement message.</param>
+    /// <remarks>Prefer the version that takes the announcement sound prototype if passing a sound</remarks>
     public virtual void DispatchFilteredAnnouncement(
         Filter filter,
         string message,
@@ -555,6 +596,26 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="playDefaultSound">Play the announcement sound.</param>
     /// <param name="announcementSound">Sound to play.</param>
     /// <param name="colorOverride">Optional color for the announcement message.</param>
+    /// <remarks>Prefer the version that takes the announcement sound prototype if passing a sound</remarks>
+    public virtual void DispatchStationAnnouncement(
+        EntityUid source,
+        string message,
+        ProtoId<AnnouncementSoundPrototype> announcementSound,
+        string? sender = null,
+        bool playDefaultSound = true,
+        Color? colorOverride = null)
+    { }
+
+    /// <summary>
+    /// Dispatches an announcement on a specific station.
+    /// </summary>
+    /// <param name="source">The entity making the announcement (used to determine the station).</param>
+    /// <param name="message">The contents of the message.</param>
+    /// <param name="sender">The sender (Communications Console in Communications Console Announcement).</param>
+    /// <param name="playDefaultSound">Play the announcement sound.</param>
+    /// <param name="announcementSound">Sound to play.</param>
+    /// <param name="colorOverride">Optional color for the announcement message.</param>
+    /// <remarks>Prefer the version that takes the announcement sound prototype if passing a sound</remarks>
     public virtual void DispatchStationAnnouncement(
         EntityUid source,
         string message,

@@ -11,28 +11,28 @@
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
-      sound: /Audio/Misc/bluealert.ogg
+      sound: AlertLevelBlue # monkestation edit - announcer variation
       color: DodgerBlue
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue
       shuttleTime: 600
     violet:
       announcement: alert-level-violet-announcement
-      sound: /Audio/Misc/notice1.ogg
+      sound: AlertLevelViolet # monkestation edit - announcer variation
       color: Violet
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
-      sound: /Audio/Misc/notice1.ogg
+      sound: AlertLevelYellow # monkestation edit - announcer variation
       color: Yellow
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/Misc/redalert.ogg
+      sound: AlertLevelRed # monkestation edit - announcer variation
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -40,10 +40,7 @@
     gamma:
       announcement: alert-level-gamma-announcement
       selectable: false
-      sound:
-        path: /Audio/Misc/gamma.ogg
-        params:
-          volume: -2
+      sound: AlertLevelGamma # monkestation edit - announcer variation
       disableSelection: true
       color: PaleVioletRed
       emergencyLightColor: PaleVioletRed
@@ -52,10 +49,7 @@
     delta:
       announcement: alert-level-delta-announcement
       selectable: false
-      sound:
-        path: /Audio/Misc/delta.ogg
-        params:
-          volume: -3
+      sound: AlertLevelDelta # monkestation edit - announcer variation
       disableSelection: true
       color: DarkRed
       emergencyLightColor: Orange
@@ -64,10 +58,7 @@
     epsilon:
       announcement: alert-level-epsilon-announcement
       selectable: false
-      sound:
-        path: /Audio/Misc/epsilon.ogg
-        params:
-          volume: -2
+      sound: AlertLevelEpsilon # monkestation edit - announcer variation
       disableSelection: true
       color: DarkViolet
       emergencyLightColor: DarkViolet
@@ -76,8 +67,7 @@
     omicron: # Goobstation
       announcement: alert-level-omicron-announcement
       selectable: false
-      sound:
-        path: /Audio/_Goobstation/Misc/omicron.ogg
+      sound: AlertLevelOmicron # monkestation edit - announcer variation
       disableSelection: true
       color: Ivory
       emergencyLightColor: Ivory
@@ -86,7 +76,7 @@
     octarine: # DeltaV - Cosmic Cult
       announcement: alert-level-octarine-announcement
       selectable: false
-      sound: /Audio/Announcements/Alerts/code_octarine.ogg
+      sound: AlertLevelOctarine # monkestation edit - announcer variation
       disableSelection: true
       color: CadetBlue
       emergencyLightColor: CadetBlue
@@ -96,15 +86,14 @@
       announcement: alert-level-honk-announcement
       selectable: false
       emagSelectable: true
-      sound:
-        path: /Audio/Items/bikehorn.ogg
+      sound: AlertLevelHonk # monkestation edit - announcer variation
       color: Magenta
       emergencyLightColor: Magenta
       forceEnableEmergencyLights: true
       shuttleTime: 600
     amber: # Goobstation
       announcement: alert-level-amber-announcement
-      sound: /Audio/_Goobstation/Announcements/amberalarm.ogg
+      sound: AlertLevelAmber # monkestation edit - announcer variation
       color: "#8A3324"
       emergencyLightColor: "#8A3324"
       forceEnableEmergencyLights: true

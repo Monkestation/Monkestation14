@@ -5,6 +5,7 @@ using System.Collections.Immutable; // Goobstation - Starlight collective mind p
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -38,6 +39,7 @@ using Content.Shared.Station.Components;
 using Content.Shared.Whitelist;
 using Content.Goobstation.Common.Chat;
 using Content.Goobstation.Common.Traits;
+using Content.Server._MACRO.Announcements;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -86,11 +88,12 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly CollectiveMindUpdateSystem _collectiveMind = default!; // Goobstation - Starlight collective mind port
     [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
 
+    [Dependency] private readonly AnnouncerManager _announcer = default!; // Monkestation - Random Announcer
+
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
-    public static readonly SoundSpecifier DefaultAnnouncementSound
-        = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+    public static readonly ProtoId<AnnouncementSoundPrototype> DefaultAnnouncementSound = "Announce"; // Monkestation - announcer variation
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White; // Einstein Engines - Language
 
@@ -387,6 +390,20 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     #region Announcements
 
+    // Monkestation edit - add this version of the function to take the announcement sound prototype directly
+    /// <inheritdoc />
+    public override void DispatchGlobalAnnouncement(
+        string message,
+        ProtoId<AnnouncementSoundPrototype> announcementSound,
+        string? sender = null,
+        bool playSound = true,
+        Color? colorOverride = null
+    )
+    {
+        _announcer.TryGetAnnouncerSound(announcementSound, out var sound);
+        DispatchGlobalAnnouncement(message, sender, playSound, sound, colorOverride);
+    }
+
     /// <inheritdoc />
     public override void DispatchGlobalAnnouncement(
         string message,
@@ -402,9 +419,30 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit - announcement prototypes
+            if (announcementSound == null)
+            {
+                _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
+            }
+            _audio.PlayGlobal(announcementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit end
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
+    }
+
+    // Monkestation edit - add this version of the function to take the announcement sound prototype directly
+    /// <inheritdoc />
+    public override void DispatchFilteredAnnouncement(
+        Filter filter,
+        string message,
+        ProtoId<AnnouncementSoundPrototype> announcementSound,
+        EntityUid? source = null,
+        string? sender = null,
+        bool playSound = true,
+        Color? colorOverride = null)
+    {
+        _announcer.TryGetAnnouncerSound(announcementSound, out var sound);
+        DispatchFilteredAnnouncement(filter, message, source, sender, playSound, sound, colorOverride);
     }
 
     /// <inheritdoc />
@@ -423,9 +461,29 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit start - announcer variation
+            if (announcementSound == null)
+            {
+                _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
+            }
+            _audio.PlayGlobal(announcementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit end
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
+    }
+
+    // Monkestation edit - add this version of the function to take the announcement sound prototype directly
+    /// <inheritdoc />
+    public override void DispatchStationAnnouncement(
+        EntityUid source,
+        string message,
+        ProtoId<AnnouncementSoundPrototype> announcementSound,
+        string? sender = null,
+        bool playDefaultSound = true,
+        Color? colorOverride = null)
+    {
+        _announcer.TryGetAnnouncerSound(announcementSound, out var sound);
+        DispatchStationAnnouncement(source, message, sender, playDefaultSound, sound, colorOverride);
     }
 
     /// <inheritdoc />
@@ -456,7 +514,13 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (playDefaultSound)
         {
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit start - announcer variation
+            if (announcementSound == null)
+            {
+                _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
+            }
+            _audio.PlayGlobal(announcementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit end
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");

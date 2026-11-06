@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Shared.Dragon;
 using Robust.Shared.Prototypes;
 
@@ -47,4 +48,8 @@ public sealed partial class DragonRiftComponent : SharedDragonRiftComponent
     [DataField("spawnStrong")]
     public EntProtoId SpawnPrototypeStrong = "MobSharkDragon";
     // </Goobstation>
+
+    // Monkestation - announcer variation
+    [DataField]
+    public ProtoId<AnnouncementSoundPrototype> WarningSound = "Notice1";
 }

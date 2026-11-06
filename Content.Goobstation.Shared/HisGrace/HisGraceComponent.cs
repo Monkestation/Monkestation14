@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.HisGrace;
 
@@ -188,11 +190,12 @@ public sealed partial class HisGraceComponent : Component
     [DataField]
     public float DefaultDamageCoefficient = 0.7f;
 
+    // Monkestation edit - announcer variation
+    /// <summary>
+    /// The sound to make when his grace ascends
+    /// </summary>
     [DataField]
-    public SoundSpecifier AscendSound = new SoundPathSpecifier("/Audio/_Goobstation/Ambience/Antag/hisgrace_ascension.ogg")
-    {
-        Params = AudioParams.Default.WithVolume(2f),
-    };
+    public ProtoId<AnnouncementSoundPrototype> AscendSound = "HisGraceAscension";
 }
 
 public enum HisGraceState : byte

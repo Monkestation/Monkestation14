@@ -50,3 +50,10 @@ Entries:
   id: 7
   time: '2026-07-13T20:01:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/45
+- author: adamsong
+  changes:
+  - message: Add support for announcer randomization
+    type: Add
+  id: 8
+  time: '2026-07-11T21:08:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/47

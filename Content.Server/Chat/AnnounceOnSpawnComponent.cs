@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Server.Chat.Systems;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Chat;
 
@@ -23,11 +25,12 @@ public sealed partial class AnnounceOnSpawnComponent : Component
     [DataField]
     public LocId? Sender;
 
+    // Monkestation edit - announcer variation
     /// <summary>
     /// Sound override for the announcement.
     /// </summary>
     [DataField]
-    public SoundSpecifier? Sound;
+    public ProtoId<AnnouncementSoundPrototype> Sound = "Announce";
 
     /// <summary>
     /// Color override for the announcement.

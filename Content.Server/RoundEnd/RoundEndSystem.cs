@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Threading;
+using Content.Goobstation.Common._MACRO.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
 using Content.Shared.CCVar;
@@ -45,6 +47,8 @@ namespace Content.Server.RoundEnd
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _stationSystem = default!;
 
+        [Dependency] private readonly AnnouncerManager _announcerManager = default!; // Monkestation - announcer variation
+
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
         /// <summary>
@@ -66,6 +70,8 @@ namespace Content.Server.RoundEnd
 
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore = false;
+        private readonly ProtoId<AnnouncementSoundPrototype> _shuttleCalledSound = "ShuttleCalled";
+        private readonly ProtoId<AnnouncementSoundPrototype> _shuttleRecalledSound = "ShuttleRecalled";
 
         public override void Initialize()
         {
@@ -218,7 +224,9 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true);
+            // Monkestation - announcer variation
+            _announcerManager.TryGetAnnouncerSound(_shuttleCalledSound, out var sound);
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -271,7 +279,9 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("round-end-system-shuttle-sender-announcement"), false, colorOverride: Color.Gold);
 
-            _audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true);
+            // Monkestation edit - announcer variation
+            _announcerManager.TryGetAnnouncerSound(_shuttleRecalledSound, out var sound);
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;

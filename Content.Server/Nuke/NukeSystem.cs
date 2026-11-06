@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._MACRO.Announcements;
 using Content.Server.AlertLevel;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
@@ -52,6 +53,8 @@ public sealed partial class NukeSystem : EntitySystem // Goob
     [Dependency] private readonly GameTicker _gameTicker = default!; // Goobstation
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+
+    [Dependency] private readonly AnnouncerManager _announcerManager = default!; // Monkestation edit - announcer variation
 
     /// <summary>
     ///     Used to calculate when the nuke song should start playing for maximum kino with the nuke sfx
@@ -552,7 +555,12 @@ public sealed partial class NukeSystem : EntitySystem // Goob
         var sender = Loc.GetString("nuke-component-announcement-sender");
         _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Red);
 
-        _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.ArmSound));
+        // Monkestation edit start - announcer variation
+        if (_announcerManager.TryGetAnnouncerSound(component.ArmSound, out var sound))
+        {
+            _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(sound));
+        }
+        // Monkestation edit end
         _nukeSongLength = (float) _audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
 
         // turn on the spinny light
@@ -595,7 +603,12 @@ public sealed partial class NukeSystem : EntitySystem // Goob
         _chatSystem.DispatchStationAnnouncement(uid, announcement, sender, false);
 
         component.PlayedNukeSong = false;
-        _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.DisarmSound));
+        // Monkestation edit start - announcer variation
+        if (_announcerManager.TryGetAnnouncerSound(component.DisarmSound, out var sound))
+        {
+            _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(sound));
+        }
+        // Monkestation edit stop
         _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
 
         // reset nuke remaining time to either itself or the minimum time, whichever is higher

@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Goobstation.Antag;
+using Content.Server._MACRO.Announcements;
 using Content.Server._RMC14.LinkAccount; // RMC - Patreon
 using Content.Server._Monkestation.Administration.Managers;
 using Content.Server.Administration;
@@ -90,6 +91,7 @@ internal static class ServerContentIoC
 
         // Monkestation start
         deps.Register<RoleTimeExemptionManager>();
+        deps.Register<AnnouncerManager>();
         // Monkestation end
     }
 }

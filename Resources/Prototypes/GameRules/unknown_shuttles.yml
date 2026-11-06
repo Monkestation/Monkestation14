@@ -45,8 +45,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-unknown-shuttle-incoming
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     weight: 4 #Common, but not every round
     reoccurrenceDelay: 30
     earliestStart: 20 # Goobstation
