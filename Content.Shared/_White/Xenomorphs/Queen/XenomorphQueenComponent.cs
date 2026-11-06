@@ -1,3 +1,4 @@
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Shared._White.Xenomorphs.Caste;
 using Robust.Shared.Prototypes;
 
@@ -20,4 +21,11 @@ public sealed partial class XenomorphQueenComponent : Component
 
     [ViewVariables]
     public EntityUid? PromotionAction;
+
+    // Monkestation edit - announcer variation
+    /// <summary>
+    /// The sound of the announcement the queen makes when she dies
+    /// </summary>
+    [DataField]
+    public ProtoId<AnnouncementSoundPrototype> DeathAnnouncementSound = "AlienQueenDied";
 }

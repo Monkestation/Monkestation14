@@ -31,9 +31,8 @@ namespace Content.Goobstation.Server.Hastur.Systems
             var (uid, comp) = ent;
 
             // Broadcast station-wide announcement
-            _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("hastur-announcement"), null, false, null, Color.FromHex("#f3ce6d"));
-
-            _audio.PlayGlobal(comp.Sound, Filter.Broadcast(), true);
+            // Monkestation edit - announcer variation
+            _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("hastur-announcement"), comp.Sound, null, true, Color.FromHex("#f3ce6d"));
 
             // Apply EntropicPlumeAffectedComponent to all mobs on station
             var query = EntityQueryEnumerator<MobStateComponent>();

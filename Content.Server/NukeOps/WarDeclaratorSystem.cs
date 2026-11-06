@@ -80,7 +80,7 @@ public sealed class WarDeclaratorSystem : EntitySystem
         if (ev.Status == WarConditionStatus.WarReady)
         {
             var title = Loc.GetString(ent.Comp.SenderTitle);
-            _chat.DispatchGlobalAnnouncement(ent.Comp.Message, title, true, ent.Comp.Sound, ent.Comp.Color);
+            _chat.DispatchGlobalAnnouncement(ent.Comp.Message, ent.Comp.Sound, title, true, ent.Comp.Color); // Monkestation edit - announcer variation
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(args.Actor):player} has declared war with this text: {ent.Comp.Message}");
             _specialAnimation.PlayAnimationFiltered(new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Tools/Decoys/commander_decoy.rsi"), "cballoon"), Filter.Broadcast(), "NukeOpsWarAnimation"); // Goob edit
         }

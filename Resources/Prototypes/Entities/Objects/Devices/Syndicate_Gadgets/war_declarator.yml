@@ -24,8 +24,7 @@
           type: WarDeclaratorBoundUserInterface
     - type: WarDeclarator
       message: war-declarator-default-message
-      sound: # Goobstation
-        collection: war
+      sound: War # Goobstation - edited for announcer variation by monkestation
     - type: AccessReader
       access: [["NuclearOperative"]]
 

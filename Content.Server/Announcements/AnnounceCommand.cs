@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
+using Content.Goobstation.Common._MACRO.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration;
 using Content.Server.Chat.Systems;
 using Content.Shared.Administration;
@@ -16,6 +19,11 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IResourceManager _res = default!;
+
+    // Monkestation edit start - announcer variation
+    [Dependency] private readonly AnnouncerManager _announcerManager = default!;
+    private readonly ProtoId<AnnouncementSoundPrototype> _defaultAnnouncementSound = "Announce";
+    // Monkestation edit end
 
     public override string Command => "announce";
     public override string Description => Loc.GetString("cmd-announce-desc");
@@ -36,7 +44,14 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
         var color = Color.Gold;
-        var sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+        // Monkestation edit start - announcer variation
+        if (!_announcerManager.TryGetAnnouncerSound(_defaultAnnouncementSound, out var sound) && args.Length < 4)
+        {
+            var warningMessage = Loc.GetString("cmd-announce-no-sound", ("sound", _defaultAnnouncementSound));
+            shell.WriteError(warningMessage);
+        }
+        // Monkestation edit end
+
 
         // Optional sender argument
         if (args.Length >= 2)
@@ -58,7 +73,11 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
 
         // Optional sound argument
         if (args.Length >= 4)
-            sound = new SoundPathSpecifier(args[3]);
+        {
+            // Monkestation - announcer variation
+            if(!_announcerManager.TryGetAnnouncerSound(args[3], out sound))
+                sound = new SoundPathSpecifier(args[3]);
+        }
 
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
         shell.WriteLine(Loc.GetString("shell-command-success"));
@@ -72,7 +91,8 @@ public sealed class AnnounceCommand : LocalizedEntityCommands
             2 => CompletionResult.FromHint(Loc.GetString("cmd-announce-arg-sender")),
             3 => CompletionResult.FromHint(Loc.GetString("cmd-announce-arg-color")),
             4 => CompletionResult.FromHintOptions(
-                CompletionHelper.AudioFilePath(args[3], _proto, _res),
+                CompletionHelper.AudioFilePath(args[3], _proto, _res)
+                    .Concat(CompletionHelper.PrototypeIDs<AnnouncementSoundPrototype>(proto: _proto)), // Monkestation edit - announcer variation
                 Loc.GetString("cmd-announce-arg-sound")
             ),
             _ => CompletionResult.Empty
