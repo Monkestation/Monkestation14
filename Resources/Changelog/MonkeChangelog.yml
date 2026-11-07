@@ -77,6 +77,13 @@ Entries:
     type: Tweak
   - message: Holoprojectors now work like in SS13. You place holograms form a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
     type: Tweak
-  id: 9
+  id: 10
   time: '2026-07-18T13:50:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/62
+- author: AitorLogedo
+  changes:
+  - message: Nukie operatives can now hear station announcements.
+    type: Tweak
+  id: 11
+  time: '2026-07-18T13:50:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/68
