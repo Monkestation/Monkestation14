@@ -53,10 +53,8 @@
   name: holofan projector
   description: Stop suicidal passengers from killing everyone during atmos emergencies.
   components:
-  - type: ChargeHolosignProjector # DeltaV - different implementation using charges
+  - type: HolosignProjector # DeltaV - different implementation using charges
     signProto: HoloFan
-  - type: LimitedCharges
-    maxCharges: 6
   - type: Sprite
     sprite: Objects/Devices/Holoprojectors/atmos.rsi
     state: icon
