@@ -55,6 +55,7 @@ using Content.Shared._RMC14.CCVar;
 
 // Goob start - the blind dont see
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.NukeOps;
 using Content.Shared.Traits.Assorted;
 // Goob end
 
@@ -509,6 +510,14 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!TryComp<StationDataComponent>(station, out var stationDataComp)) return;
 
         var filter = _stationSystem.GetInStation(stationDataComp);
+
+        // Monkestation edit start - nuke operatives can listen in on station announcements from their outpost
+        var nukies = AllEntityQuery<NukeOperativeComponent, ActorComponent>();
+        while (nukies.MoveNext(out _, out _, out var actor))
+        {
+            filter.AddPlayer(actor.PlayerSession);
+        }
+        // Monkestation edit end
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
 
