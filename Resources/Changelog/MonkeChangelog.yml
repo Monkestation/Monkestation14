@@ -67,7 +67,7 @@ Entries:
 - author: adamsong
   changes:
   - message: Removed the ability for non admins to use fuckrules
-    type: Removed
+    type: Remove
   id: 9
   time: '2026-07-18T14:12:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/61
