@@ -1028,3 +1028,6 @@ SpawnMobHumanBSOModSuit: null
 SpawnMobHumanCaptainModsuit: null
 ClothingModsuitStandardNoStorage: ClothingModsuitStandard
 BlueshieldUndeterminedHardsuit: ClothingOuterHardsuitBlueshieldLight
+
+# Flaghlight battery removal
+EmptyFlashlightLantern: FlashlightLantern
