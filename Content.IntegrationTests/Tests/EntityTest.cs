@@ -601,7 +601,7 @@ namespace Content.IntegrationTests.Tests
                             continue;
                         }
 
-                        logmill.Debug($"Adding component: {name}");
+                        logmill.Warning($"Adding component: {name}");
 
                         Assert.DoesNotThrow(() =>
                             {
