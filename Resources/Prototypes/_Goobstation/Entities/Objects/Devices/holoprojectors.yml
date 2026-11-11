@@ -6,7 +6,6 @@
   components:
   - type: HolosignProjector
     signProto: HolosignSecurityAdvanced
-    chargeUse: 100
   - type: Sprite
     sprite: _Goobstation/Objects/Devices/Holoprojectors/security.rsi
     state: icon
@@ -14,8 +13,3 @@
     tags:
     - HolofanProjector
     - SecBeltEquip
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHigh
