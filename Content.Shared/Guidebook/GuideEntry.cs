@@ -48,4 +48,10 @@ public partial class GuideEntry
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
     /// </summary>
     [DataField] public int Priority = 0;
+
+    /// <summary>
+    /// If the entry should be enabled
+    /// </summary>
+    [DataField]
+    public bool Enabled = true;
 }

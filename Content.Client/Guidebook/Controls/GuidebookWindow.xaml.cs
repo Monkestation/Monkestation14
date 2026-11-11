@@ -245,6 +245,11 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             return null;
         }
 
+        // Monkestation edit start - allow disabling of guidebook pages
+        if (!entry.Enabled)
+            return null;
+        // Monkestation edit end
+
         var rulesProto = UserInterfaceManager.GetUIController<InfoUIController>().GetCoreRuleEntry();
         if (entry.RuleEntry && entry.Id != rulesProto.Id)
             return null;
