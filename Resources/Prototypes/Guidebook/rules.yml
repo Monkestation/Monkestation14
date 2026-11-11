@@ -5,6 +5,7 @@
   name: guide-entry-rules
   priority: 60
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
+  enabled: false # Monkestation - disable
   children:
   - CoreRules
   - RoleplayRules

@@ -1,70 +1,55 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# From https://github.com/DeltaV-Station/Delta-v/
+# From funky station
 name: PR Changelogs
+
 on:
   pull_request_target:
-    types: [closed]
+    types: [ closed ]
 
-env:
-  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-  CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
-  PR_NUMBER: ${{ github.event.number }}
+concurrency:
+  group: changelog
+  cancel-in-progress: false
 
 jobs:
-  changelog:
-    runs-on: self-hosted
-    if: github.event.pull_request.merged == true
+  update-funklog:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-      - name: Checkout Master
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.BOT_TOKEN }}
-          ref: "${{ vars.CHANGELOG_BRANCH }}"
+    - uses: actions/checkout@v7
+      with:
+        ref: master
 
-      - name: Setup Git
-        run: |
-          git config --global user.name "${{ vars.CHANGELOG_USER }}"
-          git config --global user.email "${{ vars.CHANGELOG_EMAIL }}"
-        shell: bash
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+    - name: Install dependencies
+      run: pip install pyyaml
 
-      - name: Install Dependencies
-        run: |
-          cd "Tools/changelog"
-          npm install
-        shell: bash
-        continue-on-error: true
+    - name: Extract changelog entry from PR body
+      id: extract
+      env:
+        PR_BODY: ${{ github.event.pull_request.body }}
+        PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        PR_URL: ${{ github.event.pull_request.html_url }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        PR_MERGED_AT: ${{ github.event.pull_request.merged_at }}
+      run: python3 Tools/funky_changelog.py
 
-      - name: Generate and Commit Changelog
-        run: |
-          for attempt in 1 2 3 4 5 6 7 8 9 10; do
-            git fetch origin "${{ vars.CHANGELOG_BRANCH }}"
-            git reset --hard "origin/${{ vars.CHANGELOG_BRANCH }}"
+    - name: Merge entry into changelog
+      if: steps.extract.outputs.has_entry == 'true'
+      run: python3 Tools/update_changelog.py Resources/Changelog/MonkeChangelog.yml Resources/Changelog/Parts/MonkeChangelog --category MonkeChangelog
 
-            (cd "Tools/changelog" && node changelog.js)
-
-            if git diff --quiet -- "$CHANGELOG_DIR"; then
-              echo "No changelog changes to commit"
-              exit 0
-            fi
-
-            git add "$CHANGELOG_DIR"
-            git commit -m "${{ vars.CHANGELOG_MESSAGE }} (#${{ env.PR_NUMBER }})"
-
-            if git push origin "HEAD:${{ vars.CHANGELOG_BRANCH }}"; then
-              exit 0
-            fi
-
-            echo "Push failed (attempt $attempt), retrying"
-            sleep $((RANDOM % 10 + attempt * 3))
-          done
-
-          echo "Failed to push changelog after 10 attempts"
-          exit 1
-        shell: bash
+    - name: Commit Funklog.yml
+      if: steps.extract.outputs.has_entry == 'true'
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Automatic Changelog Generation"
+        commit_user_name: RoboMonke
+        commit_user_email: RoboMonke@users.noreply.github.com
+        file_pattern: Resources/Changelog/Monke14.yml
+        branch: master
