@@ -131,8 +131,7 @@
   components:
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -154,8 +153,7 @@
     chaosScore: 40 # Goobstation
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -491,8 +489,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
     chaos: # Goobstation
@@ -531,10 +528,8 @@
     weight: 5
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
+    startAudio: GridPowerOff
+    endAudio: GridPowerOn
     duration: 60
     maxDuration: 120
     eventType: Interference # Goobstation
@@ -551,8 +546,7 @@
     weight: 8
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -583,8 +577,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -607,8 +600,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
+    startAudio: Aliens
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -631,8 +623,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -657,8 +648,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
+    startAudio: Aliens
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -680,8 +670,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
     weight: 3 # Goobstation - was 1.5
@@ -805,8 +794,7 @@
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
+    startAudio: Intercept
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
     chaos: # Goobstation
@@ -892,8 +880,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20

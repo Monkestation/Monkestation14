@@ -35,8 +35,7 @@
   - type: AnnounceOnSpawn
     message: ratvar-has-risen
     sender: ratvar-has-risen-sender
-    sound:
-      path: /Audio/Misc/ratvar_reveal.ogg
+    sound: RatvarReveal
     color: "#BE8700"
   - type: CargoSellBlacklist
   - type: ContentEye

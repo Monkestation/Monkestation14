@@ -1,7 +1,10 @@
 using System.Threading;
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Shared.Database;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Toolshed.Syntax;
 using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server.RoundEnd;
@@ -66,7 +69,9 @@ public sealed partial class RoundEndSystem
                 Loc.GetString(ev.Sender ?? "round-end-system-shuttle-sender-announcement"),
                 false,
                 colorOverride: ev.Color ?? Color.Gold);
-            _audio.PlayGlobal(BlockedSound, Filter.Broadcast(), true);
+            // Monkestation edit - Announcer variation
+            _announcerManager.TryGetAnnouncerSound(BlockedSound, out var sound);
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
         }
 
         ActivateCooldown();
@@ -74,7 +79,7 @@ public sealed partial class RoundEndSystem
         return true;
     }
 
-    private static readonly SoundSpecifier BlockedSound = new SoundPathSpecifier("/Audio/Announcements/shuttlerecalled.ogg");
+    private static readonly ProtoId<AnnouncementSoundPrototype> BlockedSound = "ShuttleRecalled"; // Monkestation edit - announcer variation
 }
 
 [ByRefEvent]

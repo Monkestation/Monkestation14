@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -24,6 +25,8 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
     [Dependency] protected readonly ChatSystem ChatSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly StationSystem StationSystem = default!;
+
+    [Dependency] protected readonly AnnouncerManager AnnouncerManager = default!; // Monkestation edit - announcer variation
 
     protected ISawmill Sawmill = default!;
 
@@ -50,7 +53,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         if (stationEvent.StartAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        // Monkestation edit start - announcer variation
+        if (stationEvent.StartAudio != null && AnnouncerManager.TryGetAnnouncerSound(stationEvent.StartAudio.Value, out var sound))
+        {
+            Audio.PlayGlobal(sound, allPlayersInGame, true);
+        }
+        // Monkestation edit start
     }
 
     /// <inheritdoc/>
@@ -89,7 +97,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         if (stationEvent.EndAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
+        // Monkestation edit start - announcer variation
+        if (stationEvent.EndAudio != null && AnnouncerManager.TryGetAnnouncerSound(stationEvent.EndAudio.Value, out var sound))
+        {
+            Audio.PlayGlobal(sound, allPlayersInGame, true);
+        }
+        // Monkestation edit start
     }
 
     /// <summary>

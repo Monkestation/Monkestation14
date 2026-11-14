@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
@@ -17,6 +18,9 @@ public sealed class AlertLevelSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
+
+    // Monkestation edit - Announcer variation
+    [Dependency] private readonly AnnouncerManager _announcerManager = default!;
 
     // Until stations are a prototype, this is how it's going to have to be.
     public const string DefaultAlertLevelSet = "stationAlerts";
@@ -191,10 +195,11 @@ public sealed class AlertLevelSystem : EntitySystem
         var playDefault = false;
         if (playSound)
         {
-            if (detail.Sound != null)
+            // Monkestation edit - Announcer variation
+            if (detail.Sound != null && _announcerManager.TryGetAnnouncerSound(detail.Sound.Value, out var sound))
             {
                 var filter = _stationSystem.GetInOwningStation(station);
-                _audio.PlayGlobal(detail.Sound, filter, true, detail.Sound.Params);
+                _audio.PlayGlobal(sound, filter, true, sound.Params);
             }
             else
             {

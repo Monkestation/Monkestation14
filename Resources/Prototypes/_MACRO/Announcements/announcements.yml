@@ -1,0 +1,223 @@
+- type: announcementSound
+  id: Attention
+  defaultSound:
+    path: /Audio/Announcements/attention.ogg
+
+- type: announcementSound
+  id: Announce
+  defaultSound:
+    path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
+
+- type: announcementSound
+  id: GridPowerOff
+  defaultSound:
+    path: /Audio/Announcements/power_off.ogg
+    params:
+      volume: -4
+
+- type: announcementSound
+  id: GridPowerOn
+  defaultSound:
+    collection: PowerOn
+    params:
+      volume: -4
+
+- type: announcementSound
+  id: Intercept
+  defaultSound:
+    path: /Audio/Announcements/intercept.ogg
+
+- type: announcementSound
+  id: Welcome
+  defaultSound:
+    path: /Audio/Announcements/welcome.ogg
+
+- type: announcementSound
+  id: Meteors
+  defaultSound:
+    path: /Audio/Announcements/meteors.ogg
+    params:
+      volume: -4
+
+- type: announcementSound
+  id: War
+  defaultSound:
+    path: /Audio/Announcements/war.ogg
+
+- type: announcementSound
+  id: ShuttleCalled
+  defaultSound:
+    path: /Audio/Announcements/shuttlecalled.ogg
+
+- type: announcementSound
+  id: ShuttleRecalled
+  defaultSound:
+    path: /Audio/Announcements/shuttlerecalled.ogg
+
+- type: announcementSound
+  id: ShuttleDock
+  defaultSound:
+    path: /Audio/Announcements/shuttle_dock.ogg
+
+- type: announcementSound
+  id: Notice1
+  defaultSound:
+    path: /Audio/Misc/notice1.ogg
+
+- type: announcementSound
+  id: Notice2
+  defaultSound:
+    path: /Audio/Misc/notice2.ogg
+
+- type: announcementSound
+  id: HereticAshAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_ash.ogg
+
+- type: announcementSound
+  id: HereticBladeAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_blade.ogg
+
+- type: announcementSound
+  id: HereticCosmosAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_cosmos.ogg
+
+- type: announcementSound
+  id: HereticFleshAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_flesh.ogg
+
+- type: announcementSound
+  id: HereticKnockAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_knock.ogg
+
+- type: announcementSound
+  id: HereticRustAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_rust.ogg
+
+- type: announcementSound
+  id: HereticVoidAscend
+  defaultSound:
+    path: /Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_void.ogg
+
+- type: announcementSound
+  id: BlobDetected
+  defaultSound:
+    path: /Audio/_Goobstation/Announcements/blob_detected.ogg
+
+- type: announcementSound
+  id: BlobCritical
+  defaultSound:
+    path: /Audio/StationEvents/blobin_time.ogg
+
+- type: announcementSound
+  id: HisGraceAscension
+  defaultSound:
+    path: /Audio/_Goobstation/Ambience/Antag/hisgrace_ascension.ogg
+    params:
+      volume: 2
+
+- type: announcementSound
+  id: AlienQueenDied
+  defaultSound:
+    path: /Audio/_RMC14/Xeno/alien_queen_died.ogg
+
+- type: announcementSound
+  id: HasturGrowl
+  defaultSound:
+    path: /Audio/_Goobstation/Misc/Hastur/growl.ogg
+
+- type: announcementSound
+  id: Outbreak7
+  defaultSound:
+    path: /Audio/Announcements/outbreak7.ogg
+
+- type: announcementSound
+  id: CosmicCultTier2
+  defaultSound:
+    path: /Audio/_DV/CosmicCult/tier2.ogg
+
+- type: announcementSound
+  id: RatvarReveal
+  defaultSound:
+    path: /Audio/Misc/ratvar_reveal.ogg
+
+- type: announcementSound
+  id: NarsieRises
+  defaultSound:
+    path: /Audio/Misc/narsie_rises.ogg
+
+- type: announcementSound
+  id: Aliens
+  defaultSound:
+    path: /Audio/Announcements/aliens.ogg
+
+- type: announcementSound
+  id: AlertLevelBlue
+  defaultSound:
+    path: /Audio/Misc/bluealert.ogg
+
+- type: announcementSound
+  id: AlertLevelViolet
+  defaultSound:
+    path: /Audio/Misc/notice1.ogg
+
+- type: announcementSound
+  id: AlertLevelYellow
+  defaultSound:
+    path: /Audio/Misc/notice1.ogg
+
+- type: announcementSound
+  id: AlertLevelRed
+  defaultSound:
+    path: /Audio/Misc/redalert.ogg
+
+- type: announcementSound
+  id: AlertLevelGamma
+  defaultSound:
+    path: /Audio/Misc/gamma.ogg
+    params:
+      volume: -2
+
+- type: announcementSound
+  id: AlertLevelDelta
+  defaultSound:
+    path: /Audio/Misc/delta.ogg
+    params:
+      volume: -3
+
+- type: announcementSound
+  id: AlertLevelEpsilon
+  defaultSound:
+    path: /Audio/Misc/epsilon.ogg
+    params:
+      volume: -2
+
+- type: announcementSound
+  id: AlertLevelOmicron
+  defaultSound:
+    path: /Audio/_Goobstation/Misc/omicron.ogg
+
+- type: announcementSound
+  id: AlertLevelOctarine
+  defaultSound:
+    path: /Audio/Announcements/Alerts/code_octarine.ogg
+
+- type: announcementSound
+  id: AlertLevelHonk
+  defaultSound:
+    path: /Audio/Items/bikehorn.ogg
+
+- type: announcementSound
+  id: AlertLevelAmber
+  defaultSound:
+    path: /Audio/_Goobstation/Announcements/amberalarm.ogg
+
+- type: announcementSound
+  id: RescueImminent
+  defaultSound:
+    path: /Audio/StationEvents/rescue_imminent.ogg

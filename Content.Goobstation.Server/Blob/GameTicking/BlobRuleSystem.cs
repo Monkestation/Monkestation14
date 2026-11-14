@@ -130,9 +130,9 @@ public sealed partial class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
 
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("blob-alert-detect"),
+                    blobRuleComp.DetectedAudio, // Monkestation edit - announcer variation
                     stationName,
                     true,
-                    blobRuleComp.DetectedAudio,
                     Color.Red);
 
                 _alertLevelSystem.SetLevel(stationUid, StationAlertDetected, true, true, true, true);
@@ -152,9 +152,9 @@ public sealed partial class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                     blobRuleComp.Stage = BlobStage.Critical;
                     _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("blob-alert-critical"),
+                    blobRuleComp.CriticalAudio, // Monkestation edit - announcer variation
                     stationName,
                     true,
-                    blobRuleComp.CriticalAudio,
                     Color.Red);
                 }
                 else
@@ -162,9 +162,9 @@ public sealed partial class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                     blobRuleComp.Stage = BlobStage.Critical;
                     _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("blob-alert-critical-NoNukeCode"),
+                    blobRuleComp.CriticalAudio, // Monkestation edit - announcer variation
                     stationName,
                     true,
-                    blobRuleComp.CriticalAudio,
                     Color.Red);
                 }
 

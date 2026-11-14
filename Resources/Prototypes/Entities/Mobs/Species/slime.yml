@@ -150,6 +150,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: SlimeFloorAbsorption # Monkestation - slurp pubbles/dirt while barefoot
 
 - type: entity
   parent: MobHumanDummy

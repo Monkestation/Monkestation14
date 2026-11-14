@@ -428,7 +428,8 @@ public sealed partial class HisGraceSystem : SharedHisGraceSystem
         UpdateSpeedMultiplier(hisGrace, hisGrace.Comp.SpeedAddition * hisGrace.Comp.SpeedIncrementMultiplier * hisGrace.Comp.SpeedIncrementMultiplier);
 
         // le funny ascension
-        _chat.DispatchGlobalAnnouncement(Loc.GetString("hisgrace-ascension-announcement"), Name(user), true, hisGrace.Comp.AscendSound, Color.PaleGoldenrod);
+        // Monkestation edit - announcer variation
+        _chat.DispatchGlobalAnnouncement(Loc.GetString("hisgrace-ascension-announcement"), hisGrace.Comp.AscendSound, Name(user), true, Color.PaleGoldenrod);
     }
 
     private void ChangeState(Entity<HisGraceComponent> hisGrace, HisGraceState newState)

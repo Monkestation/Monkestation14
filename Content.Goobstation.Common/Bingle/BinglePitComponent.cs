@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -80,4 +81,11 @@ public sealed partial class BinglePitComponent : Component
     /// Bunch of available bingle ghost role
     /// </summary>
     public HashSet<EntityUid?> BingleGhostRoles = [];
+
+    // Monkestation addition - random announcers
+    /// <summary>
+    /// The sound to play when the pit reaches level 5
+    /// </summary>
+    [DataField]
+    public ProtoId<AnnouncementSoundPrototype> AscensionSound = "HereticFleshAscend";
 }

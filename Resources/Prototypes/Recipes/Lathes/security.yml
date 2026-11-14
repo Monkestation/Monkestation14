@@ -156,11 +156,11 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HoloprojectorSecurity
-  result: HoloprojectorSecurityEmpty
+  result: HoloprojectorSecurity # Monkestation edit - no empty variant, prints ready to use
   materials:
     Steel: 300
-    Glass: 50
-    Plastic: 50
+    Plastic: 250
+    Glass: 150
 
 - type: latheRecipe
   parent: BaseToolRecipe

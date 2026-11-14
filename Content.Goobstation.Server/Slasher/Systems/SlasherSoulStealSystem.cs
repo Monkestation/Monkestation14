@@ -262,7 +262,7 @@ public sealed partial class SlasherSoulStealSystem : EntitySystem
                 _chatSystem.DispatchStationAnnouncement(
                     station.Value,
                     Loc.GetString(comp.AscendanceAnnouncementKey),
-                    sender: Loc.GetString("comms-console-announcement-title-centcom"),
+                    Loc.GetString("comms-console-announcement-title-centcom"),
                     playDefaultSound: false,
                     announcementSound: null,
                     colorOverride: Color.Red);

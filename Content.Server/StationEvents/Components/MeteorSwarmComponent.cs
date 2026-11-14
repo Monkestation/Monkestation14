@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Server.StationEvents.Events;
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Audio;
@@ -35,13 +36,7 @@ public sealed partial class MeteorSwarmComponent : Component
     public LocId? Announcement = "station-event-meteor-swarm-start-announcement";
 
     [DataField]
-    public SoundSpecifier? AnnouncementSound = new SoundPathSpecifier("/Audio/Announcements/meteors.ogg")
-    {
-        Params = new()
-        {
-            Volume = -4
-        }
-    };
+    public ProtoId<AnnouncementSoundPrototype>? AnnouncementSound = "Meteors"; // Monkestation edit - announcer variation
 
     /// <summary>
     /// Each meteor entity prototype and their corresponding weight in being picked.

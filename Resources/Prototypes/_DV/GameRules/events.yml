@@ -44,8 +44,7 @@
     eventType: Neutral
     startAnnouncement: cosmiccult-announce-tier2-warning
     startAnnouncementColor: "#cae8e8"
-    startAudio:
-      path: /Audio/_DV/CosmicCult/tier2.ogg
+    startAudio: CosmicCultTier2
   - type: GameRule
     chaosScore: -50
   - type: RandomMultipleSpawnRule

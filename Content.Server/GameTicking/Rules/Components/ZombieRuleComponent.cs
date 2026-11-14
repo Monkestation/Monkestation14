@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.GameTicking.Rules.Components;
@@ -27,4 +29,9 @@ public sealed partial class ZombieRuleComponent : Component
 
     // goob edit
     public bool StartAnnounced = false;
+
+    // Monkestation edit - announcer variations
+    [DataField]
+    public ProtoId<AnnouncementSoundPrototype> AnnouncementSound = "Outbreak7";
+
 }

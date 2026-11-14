@@ -13,6 +13,7 @@ using Content.Server.Heretic.Components;
 using Content.Server.Antag;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Goobstation.Common.CCVar;
 using Content.Server._Goobstation.Objectives.Components;
 using Content.Server.Actions;
@@ -484,13 +485,12 @@ public sealed partial class HereticSystem : SharedHereticSystem
             }
         }
 
+        ProtoId<AnnouncementSoundPrototype> ascendSound = $"Heretic{ent.Comp.CurrentPath}Ascend";
         var pathLoc = ent.Comp.CurrentPath.ToLower();
-        var ascendSound =
-            new SoundPathSpecifier($"/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_{pathLoc}.ogg");
         _chat.DispatchGlobalAnnouncement(Loc.GetString($"heretic-ascension-{pathLoc}"),
+            ascendSound,
             Name(uid),
             true,
-            ascendSound,
             Color.Pink);
     }
 

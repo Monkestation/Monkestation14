@@ -172,9 +172,11 @@ public sealed partial class LobbyGui
         AddLink("server-info-telegram-button", CCVars.InfoLinksTelegram);
         AddLink("rmc-ui-patreon", CCVars.InfoLinksPatreon);
 
-        var linkAccount = new Button { Text = Loc.GetString("rmc-ui-link-discord-account") };
-        linkAccount.OnPressed += _ => UserInterfaceManager.GetUIController<LinkAccountUIController>().ToggleWindow();
-        items.Add(linkAccount);
+        // Monkestation edit - disable link account button
+        // var linkAccount = new Button { Text = Loc.GetString("rmc-ui-link-discord-account") };
+        // linkAccount.OnPressed += _ => UserInterfaceManager.GetUIController<LinkAccountUIController>().ToggleWindow();
+        // items.Add(linkAccount);
+        // Monkestation edit end
 
         AddLink("server-info-report-button", CCVars.InfoLinksBugReport);
 

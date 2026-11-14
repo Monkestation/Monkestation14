@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Explosion;
@@ -82,10 +83,10 @@ namespace Content.Server.Nuke
         public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/Machines/Nuke/nuke_alarm.ogg");
 
         [DataField("armSound")]
-        public SoundSpecifier ArmSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
+        public ProtoId<AnnouncementSoundPrototype> ArmSound = "Notice1"; // Monkestation edit - announcer variation
 
         [DataField("disarmSound")]
-        public SoundSpecifier DisarmSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
+        public ProtoId<AnnouncementSoundPrototype> DisarmSound = "Notice2"; // Monkestation edit - announcer variation
 
         [DataField("armMusic")]
         public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("NukeMusic");
