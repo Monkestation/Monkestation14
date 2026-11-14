@@ -215,7 +215,9 @@
 - type: announcementSound
   id: AlertLevelAmber
   defaultSound:
-    path: /Audio/_Goobstation/Announcements/amberalarm.ogg
+    path: /Audio/Misc/delta_alt.ogg #Monke
+    params:
+      volume: -3
 
 - type: announcementSound
   id: RescueImminent
