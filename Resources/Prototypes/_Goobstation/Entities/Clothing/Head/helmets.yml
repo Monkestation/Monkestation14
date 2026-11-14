@@ -35,6 +35,7 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadHelmetBase
@@ -186,6 +187,7 @@
       Hair: HEAD
       HeadTop: HEAD
       HeadSide: HEAD
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadHatHelmetTemplar

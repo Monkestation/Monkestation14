@@ -39,6 +39,7 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadBase
@@ -87,6 +88,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadBase
@@ -133,6 +135,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadBase
@@ -151,6 +154,7 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadBase
@@ -285,6 +289,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: ClothingHeadBase
@@ -302,6 +307,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  - type: PlasmaUnfit #Omustation
 
 - type: entity
   parent: Clothing
