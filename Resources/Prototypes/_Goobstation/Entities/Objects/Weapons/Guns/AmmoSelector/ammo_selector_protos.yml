@@ -65,7 +65,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: clownshot
-  color: gold #OmuStation, was yellow
+  color: "#f2c85c" #MonkeStation, was yellow
   protoId: BulletClownshot
   fireCost: 40
 
@@ -75,7 +75,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: pulse
-  color: mediumblue #OmuStation, was blue
+  color: "#5366c7" #MonkeStation, was blue
   protoId: BulletPulse
   fireCost: 60
 
@@ -85,7 +85,7 @@
   icon:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     state: omnilaser
-  color: mediumturquoise #OmuStation, was blue
+  color: "#67d2b1" #MonkeStation, was blue
   protoId: BulletDetain
   fireCost: 60
 
@@ -95,7 +95,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: execute
-  color: green
+  color: "#63cc3d" #MonkeStation, was green
   protoId: BulletExecute
   fireCost: 80
 
@@ -105,7 +105,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: hotshot
-  color: firebrick #OmuStation, was red
+  color: "#c73d34" #MonkeStation, was red
   protoId: BulletHotshot
   fireCost: 80
 
@@ -115,7 +115,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: sleepshot
-  color: rosybrown #OmuStation, was pink
+  color: "#df94a6" #MonkeStation, was pink
   protoId: BulletSleepshot
   fireCost: 60
 
@@ -125,7 +125,7 @@
   icon:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: bigshot
-  color: gray
+  color: "#9d9d9d" #MonkeStation, was grey
   protoId: BulletBigshot
   fireCost: 80
 
