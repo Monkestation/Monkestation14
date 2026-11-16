@@ -18,6 +18,7 @@
   speciesWhitelist:
   - IPC
   - Harpy
+  - Synth
 
 # Moff squeaksqueaksqueaksqueak
 - type: soundCollection
@@ -89,3 +90,4 @@
   speciesWhitelist:
   - IPC
   - Harpy
+  - Synth
