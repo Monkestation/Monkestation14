@@ -1,0 +1,2 @@
+- files: ["_Monkestation/Shuttles/miningmk3.yml"]
+  authors: orginal by wizden, modified by Flameingman2

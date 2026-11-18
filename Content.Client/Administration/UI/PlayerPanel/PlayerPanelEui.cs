@@ -44,6 +44,8 @@ public sealed class PlayerPanelEui : BaseEui
         PlayerPanel.OnFollow += () => SendMessage(new PlayerPanelFollowMessage());
 
         PlayerPanel.OnClose += () => SendMessage(new CloseEuiMessage());
+
+        PlayerPanel.OnRoleExemptions += (id) => _console.ExecuteCommand($"role-time-exemption-panel \"{id}\""); // Monkestation edit
     }
 
     public override void Opened()

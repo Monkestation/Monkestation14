@@ -22,6 +22,7 @@ using Robust.Shared.Audio.Systems; // goobstation
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Globalization;
+using Content.Server._MACRO.Announcements;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -40,6 +41,8 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     [Dependency] private readonly GameTicker _gameTicker = default!; // Einstein Engines - Zombie Improvements Take 2
     [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!; // Goobstation
+
+    [Dependency] private readonly AnnouncerManager _announcerManager = default!; // Monkestation - announcer variation
 
     public override void Initialize()
     {
@@ -136,7 +139,9 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
                     colorOverride: Color.Pink);
             }
 
-            _audio.PlayGlobal("/Audio/Announcements/outbreak7.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            // Monkestation edit - announcer variation
+            _announcerManager.TryGetAnnouncerSound(zombieRuleComponent.AnnouncementSound, out var sound);
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
 
         if (GetInfectedFraction(false) > zombieRuleComponent.ZombieShuttleCallPercentage && !_roundEnd.IsRoundEndRequested())

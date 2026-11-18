@@ -201,8 +201,7 @@
   - type: StationEvent
     startAnnouncement: station-event-emergency-grid-restore-announcement
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    startAudio: Announce
     weight: 4
     reoccurrenceDelay: 25
     earliestStart: 10

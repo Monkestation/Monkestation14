@@ -449,6 +449,7 @@ namespace Content.Server.GameTicking
             SendStatusToAll();
             ReqWindowAttentionAll();
             UpdateLateJoinStatus();
+            _announcerManager.RandomizeAnnouncer(); // Monkestation edit - announcer variation
             AnnounceRound();
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
@@ -842,8 +843,9 @@ namespace Content.Server.GameTicking
             if (proto.Message != null)
                 _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(proto.Message), playSound: true);
 
-            if (proto.Sound != null)
-                _audio.PlayGlobal(proto.Sound, Filter.Broadcast(), true);
+            // Monkestation edit - announcer variation
+            if (proto.Sound != null && _announcerManager.TryGetAnnouncerSound(proto.Sound.Value, out var sound))
+                _audio.PlayGlobal(sound, Filter.Broadcast(), true);
         }
 
         private async void SendRoundStartedDiscordMessage()

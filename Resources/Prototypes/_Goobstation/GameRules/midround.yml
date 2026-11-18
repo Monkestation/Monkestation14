@@ -10,8 +10,7 @@
     minimumPlayers: 15
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
+    startAudio: Intercept
     duration: null
     occursDuringRoundEnd: false
     chaos:

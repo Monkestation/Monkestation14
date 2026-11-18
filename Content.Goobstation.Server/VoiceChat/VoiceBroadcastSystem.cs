@@ -1,5 +1,6 @@
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Shared.VoiceChat;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Communications;
 using Content.Server.Power.EntitySystems;
@@ -30,6 +31,9 @@ public sealed partial class VoiceBroadcastSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private StationSystem _station = default!;
+
+    // Monkestation edit - announcer variation
+    [Dependency] private AnnouncerManager _announcerManager = default!;
 
     private readonly Dictionary<EntityUid, EntityUid> _active = new();
     private readonly List<EntityUid> _toStop = new();
@@ -143,7 +147,8 @@ public sealed partial class VoiceBroadcastSystem : EntitySystem
 
         var recipients = new HashSet<ICommonSession>();
         GetRecipients(ent, recipients);
-        _audio.PlayGlobal(ent.Comp.Sound, Filter.Empty().AddPlayers(recipients), true);
+        _announcerManager.TryGetAnnouncerSound(ent.Comp.Sound, out var sound); // Monkestation edit - announcer variation
+        _audio.PlayGlobal(sound, Filter.Empty().AddPlayers(recipients), true);
 
         _popup.PopupEntity(Loc.GetString("voice-broadcast-started", ("seconds", (int) broadcast.Duration.TotalSeconds)), ent, user);
         _adminLog.Add(LogType.Chat, LogImpact.Medium, $"{ToPrettyString(user):user} started a station voice broadcast from {ToPrettyString(ent):console}");

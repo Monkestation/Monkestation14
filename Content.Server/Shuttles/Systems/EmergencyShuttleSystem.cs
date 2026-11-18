@@ -19,7 +19,8 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Server._DV.Shuttles.Events; // DeltaV
+using Content.Server._DV.Shuttles.Events;
+using Content.Server._MACRO.Announcements; // DeltaV
 using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -72,6 +73,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
+
+    [Dependency] private readonly AnnouncerManager _announcerManager = default!; // Monkestation - announcer variation
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -342,7 +345,9 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
                 playDefaultSound: false);
 
             // TODO: Need filter extensions or something don't blame me.
-            _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+            // Monkestation edit - announcer variation
+            _announcerManager.TryGetAnnouncerSound(result.Station.Comp.ShuttleGoodLuckSound, out var sound);
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
             return;
         }
 
@@ -395,10 +400,11 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         // Play announcement audio.
-
-        var audioFile = result.ResultType == ShuttleDockResultType.NoDock
-            ? "/Audio/Misc/notice1.ogg"
-            : "/Audio/Announcements/shuttle_dock.ogg";
+        // Monkestation edit - announcer variation
+        _announcerManager.TryGetAnnouncerSound(result.ResultType == ShuttleDockResultType.NoDock
+                ? result.Station.Comp.ShuttleNoDockSound
+                : result.Station.Comp.ShuttleDockSound,
+            out var audioFile);
 
         // TODO: Need filter extensions or something don't blame me.
         _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);

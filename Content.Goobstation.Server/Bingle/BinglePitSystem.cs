@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Goobstation.Common.Bingle;
 using Content.Goobstation.Shared.Bingle;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Pinpointer;
@@ -192,8 +194,8 @@ public sealed partial class BinglePitSystem : EntitySystem
         if (component.Level != 5)
             return;
 
-        var ascendSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_flesh.ogg");
-        _chat.DispatchGlobalAnnouncement(Loc.GetString("heretic-ascension-bingle"), Name(uid), true, ascendSound, Color.Pink);
+        // Monkestation edit - announcer variation
+        _chat.DispatchGlobalAnnouncement(Loc.GetString("heretic-ascension-bingle"), component.AscensionSound, Name(uid), true, Color.Pink);
     }
 
     public void UpgradeBingles(EntityUid uid, BinglePitComponent component)

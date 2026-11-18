@@ -1,0 +1,117 @@
+Name: Monkelog
+Order: -2
+Entries:
+- author: adamsong
+  changes:
+  - message: Added role exemption panel
+    type: Add
+  id: 1
+  time: '2026-06-09T23:14:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/15
+- author: Skarlet
+  changes:
+  - message: Added server rules to the guidebook
+    type: Add
+  id: 2
+  time: '2026-06-13T18:42:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/17
+- author: Gboster-0
+  changes:
+  - message: Changed the orbit menu to be nicer to use
+    type: Tweak
+  id: 3
+  time: '2026-06-19T12:08:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/19
+- author: adamsong
+  changes:
+  - message: Small bugfix on the orbit menu
+    type: Tweak
+  id: 4
+  time: '2026-06-20T21:54:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/22
+- author: AitorLogedo
+  changes:
+  - message: Slimepeople can now passively slurp up puddles, and clean dirt and footprints off the floor while barefoot, feeding off what they absorb. They also stop leaving their own footprints while doing it. Toggle it with an action.
+    type: Tweak
+  id: 5
+  time: '2026-07-13T20:01:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/24
+- author: adamsong
+  changes:
+  - message: Added a bunch of lobby music!
+    type: Tweak
+  id: 6
+  time: '2026-06-30T02:43:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/33
+- author: UnidentifiedSubstance
+  changes:
+  - message: Most missing spaces and spelling mistakes in rules. most...
+    type: Fix
+  id: 7
+  time: '2026-07-13T20:01:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/45
+- author: adamsong
+  changes:
+  - message: Add support for announcer randomization
+    type: Add
+  id: 8
+  time: '2026-07-11T21:08:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/47
+- author: Skarlet
+  changes:
+  - message: New, randomized announcer now color the station's radio!
+    type: Add
+  id: 8
+  time: '2026-07-16T13:45:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/52
+- author: adamsong
+  changes:
+  - message: Removed the ability for non admins to use fuckrules
+    type: Remove
+  id: 9
+  time: '2026-07-18T14:12:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/61
+- author: Sif
+  changes:
+  - message: Flashlights and most handheld lights no longer need batteries to work.
+    type: Tweak
+  - message: Holoprojectors now work like in SS13. You place holograms form a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
+    type: Tweak
+  id: 10
+  time: '2026-07-18T13:50:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/62
+- author: AitorLogedo
+  changes:
+  - message: Nukie operatives can now hear station announcements.
+    type: Tweak
+  id: 11
+  time: '2026-07-18T13:50:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/68
+- author: Blumbee
+  changes:
+  - message: Guidebook now contains Spacelaw, Crime List
+    type: Add
+  id: 12
+  time: '2026-08-18T19:32:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/70
+- author: adamsong
+  changes:
+  - message: Added status command to discord
+    type: Add
+  id: 13
+  time: '2026-07-27T13:02:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/72
+- author: Skarlet
+  changes:
+  - message: Ported Carpmosia's AI navmap overlay, which shows the station layout without static
+    type: Add
+  id: 14
+  time: '2026-08-08T07:09:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/83
+- author: Skarlet
+  changes:
+  - message: Added the Duke of Ook to the game (plushie version)!
+    type: Add
+  id: 15
+  time: '2026-09-14T23:20:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/121

@@ -347,6 +347,10 @@
     - Parasite
   - type: ObraDinnBody # Goobstation
   # </Goobstation>
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+
 
 - type: entity
   save: false
