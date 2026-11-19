@@ -141,7 +141,7 @@ jobs:
         echo "approvals=$APPROVALS" >> "$GITHUB_OUTPUT"
 
     - name: Add Approved Label if Enough Approvals
-      if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals >= 2
+      if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals >= 1
       uses: actions-ecosystem/action-add-labels@v1
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -150,7 +150,7 @@ jobs:
         labels: "S: Approved"
 
     - name: Remove Other Labels on Approved
-      if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals >= 2
+      if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals >= 1
       uses: actions-ecosystem/action-remove-labels@v1
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -159,26 +159,6 @@ jobs:
         labels: |
           S: Needs Review
           S: Needs Second Approval
-
-    - name: Add Second Approval Requirement
-      if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals == 1
-      uses: actions-ecosystem/action-add-labels@v1
-      env:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        number: ${{ steps.pr-context.outputs.number }}
-        labels: |
-          S: Needs Review
-          S: Needs Second Approval
-
-    - name: Remove Other Labels on Second Approval
-      if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals == 1
-      uses: actions-ecosystem/action-remove-labels@v1
-      env:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        number: ${{ steps.pr-context.outputs.number }}
-        labels: "S: Approved"
 
     - name: Remove All Other Labels if No Approval
       if: github.event_name == 'workflow_run' && steps.check-approvals.outputs.approvals < 1
