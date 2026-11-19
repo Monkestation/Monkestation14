@@ -1029,5 +1029,19 @@ SpawnMobHumanCaptainModsuit: null
 ClothingModsuitStandardNoStorage: ClothingModsuitStandard
 BlueshieldUndeterminedHardsuit: ClothingOuterHardsuitBlueshieldLight
 
+#2026-11-03
+MailRobustToolsSpam: MailSpamLetter
+MailNanotrasenSpam: MailSpamLetter
+MailSyndicateSpam: MailSpamLetter
+MailAlternativeDimensionSpam: MailSpamLetter
+MailNarsieCultSpam: MailSpamLetter
+MailRageCageSpam: MailSpamLetter
+MailVoyageAdvertisementSpam: MailSpamLetter
+MailScienceSpiderClanSpam: MailSpamLetter
+MailAllAccessSpam: MailSpamLetter
+MailCentcommRetributionSpam: MailSpamLetter
+MailEvilLizardSpam: MailSpamLetter
+MailParentsNeedMoneySpam: MailSpamLetter
+
 # Flaghlight battery removal
 EmptyFlashlightLantern: FlashlightLantern

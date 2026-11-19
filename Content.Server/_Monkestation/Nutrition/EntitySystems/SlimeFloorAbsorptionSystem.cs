@@ -2,7 +2,6 @@
 
 using System.Numerics;
 using Content.Goobstation.Common.Footprints;
-using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Body.Systems;
 using Content.Server.Decals;
 using Content.Shared._Monkestation.Nutrition;
@@ -13,6 +12,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Decals;
+using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Nutrition.Components;
