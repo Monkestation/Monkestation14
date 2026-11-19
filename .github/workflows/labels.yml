@@ -36,9 +36,11 @@ jobs:
       if: ${{ !cancelled() && github.event_name == 'pull_request_target' && contains(fromJSON('["opened", "synchronize", "reopened"]'), github.event.action) }}
       uses: actions/labeler@v5
 
-    - name: Label size
+    - name: Label size hopefully
       if: ${{ !cancelled() && github.event_name == 'pull_request_target' && contains(fromJSON('["opened", "synchronize", "reopened"]'), github.event.action) }}
       uses: "pascalgn/size-label-action@v0.5.5"
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       with:
         sizes: >
           {
