@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._Monkestation.Administration.Managers;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
@@ -39,6 +40,8 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly PlayTimeTrackingManager _tracking = default!;
+
+    [Dependency] private readonly RoleTimeExemptionManager _exemptionManager = default!; // Monkestation edit
 
     public override void Initialize()
     {
@@ -245,6 +248,13 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
+        // Monkestation start
+        if (_exemptionManager.IsExemptFor(player, job))
+        {
+            return true;
+        }
+        // Monkestation end
+
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
         {
             Log.Error($"Unable to check playtimes {Environment.StackTrace}");
@@ -272,6 +282,13 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     {
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
+
+        // Monkestation start
+        if (_exemptionManager.IsExemptFor(player, antag))
+        {
+            return true;
+        }
+        // Monkestation end
 
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
         {
@@ -304,6 +321,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
+            // Monkestation start
+            if (_exemptionManager.IsExemptFor(player, (ProtoId<JobPrototype>) job.ID))
+            {
+                continue;
+            }
+            // Monkestation end
             if (JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(player.UserId).SelectedCharacter))
                 roles.Add(job.ID);
         }
@@ -326,6 +349,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         for (var i = 0; i < jobs.Count; i++)
         {
+            // Monkestation start
+            if (_exemptionManager.IsExemptFor(player, jobs[i]))
+            {
+                continue;
+            }
+            // Monkestation end
             if (_prototypes.Resolve(jobs[i], out var job)
                 && JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(userId).SelectedCharacter))
             {

@@ -19,7 +19,8 @@ public sealed class HandheldLightSystem : SharedHandheldLightSystem
     {
         base.Initialize();
 
-        Subs.ItemStatus<HandheldLightComponent>(ent => new HandheldLightStatus(ent));
+        // Monkestation edit - self-powered lights have no battery, so the charge meter is pointless.
+        Subs.ItemStatus<HandheldLightComponent>(ent => ent.Comp.SelfPowered ? null : new HandheldLightStatus(ent));
         SubscribeLocalEvent<HandheldLightComponent, AppearanceChangeEvent>(OnAppearanceChange);
     }
 

@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Shared.Communications;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Communications
 {
@@ -67,7 +69,7 @@ namespace Content.Server.Communications
         /// Announce sound file path
         /// </summary>
         [DataField]
-        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+        public ProtoId<AnnouncementSoundPrototype> Sound = "Announce"; // Monkestation edit
 
         /// <summary>
         /// Hides the sender identity (If they even have one).

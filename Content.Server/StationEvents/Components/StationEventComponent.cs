@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Goobstation.Common.StationEvents.SecretPlus;
 using Content.Goobstation.Server.StationEvents.Metric;
 using Robust.Shared.Audio;
@@ -43,11 +44,13 @@ public sealed partial class StationEventComponent : Component
     [DataField]
     public Color EndAnnouncementColor = Color.Gold;
 
+    // Monkestation edit start - announcer variation
     [DataField]
-    public SoundSpecifier? StartAudio;
+    public ProtoId<AnnouncementSoundPrototype>? StartAudio;
 
     [DataField]
-    public SoundSpecifier? EndAudio;
+    public ProtoId<AnnouncementSoundPrototype>? EndAudio;
+    // Monkestation edit end
 
     /// <summary>
     ///     In minutes, when is the first round time this event can start

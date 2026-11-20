@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Store.Systems;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.FixedPoint;
 using Content.Shared.Eye;
 using Content.Shared.Heretic;
 using Content.Shared.Mind;
@@ -13,6 +13,7 @@ using Content.Server.Heretic.Components;
 using Content.Server.Antag;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Goobstation.Common.CCVar;
 using Content.Server._Goobstation.Objectives.Components;
 using Content.Server.Actions;
@@ -484,13 +485,12 @@ public sealed partial class HereticSystem : SharedHereticSystem
             }
         }
 
+        ProtoId<AnnouncementSoundPrototype> ascendSound = $"Heretic{ent.Comp.CurrentPath}Ascend";
         var pathLoc = ent.Comp.CurrentPath.ToLower();
-        var ascendSound =
-            new SoundPathSpecifier($"/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/ascend_{pathLoc}.ogg");
         _chat.DispatchGlobalAnnouncement(Loc.GetString($"heretic-ascension-{pathLoc}"),
+            ascendSound,
             Name(uid),
             true,
-            ascendSound,
             Color.Pink);
     }
 

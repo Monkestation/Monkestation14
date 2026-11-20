@@ -15,8 +15,8 @@
   - type: Sprite
     sprite: Structures/Holo/wetfloor.rsi
     state: icon
-  - type: TimedDespawn
-    lifetime: 90
+  # Monkestation edit - holograms no longer despawn on a timer; you place and remove them like in SS13
+  - type: Clickable
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -46,8 +46,7 @@
         shape:
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
-  #- type: TimedDespawn # DeltaV - no despawning for holofans
-  #  lifetime: 180
+  # Monkestation edit - no timed despawn
   - type: Transform # DeltaV
     noRot: true
   - type: Airtight
@@ -80,9 +79,7 @@
         hard: false
         layer:
         - SlipLayer
-  - type: TimedDespawn
-    lifetime: 30
-  - type: Clickable
+  # Monkestation edit - no timed despawn
   - type: Destructible
     thresholds:
       - trigger:
@@ -114,8 +111,7 @@
             - TableMask
           layer:
             - TableLayer
-    - type: TimedDespawn
-      lifetime: 180
+    # Monkestation edit - no timed despawn
     - type: PointLight
       enabled: true
       radius: 3
@@ -145,8 +141,7 @@
         - FullTileMask
         layer:
         - GlassLayer
-  - type: TimedDespawn
-    lifetime: 180
+  # Monkestation edit - no timed despawn
   - type: PointLight
     enabled: true
     radius: 3

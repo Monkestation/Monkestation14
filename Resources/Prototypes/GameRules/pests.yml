@@ -24,13 +24,12 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 15
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     chaos: # Goobstation
-      Infestation: 40
+      Infestation: 10
       Mess: 10 # there's 15 morbillion mice usually and they're easy to kill
     eventType: Neutral # Goobstation
   # Goobstation
@@ -50,16 +49,15 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 15
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
     chaos: # Goobstation
-      Infestation: 30
-      Mess: 10
-      Hostile: 1 # low chance to spawn rat king
+      Infestation: 5
+      Mess: 100
+      Hostile: 30
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -83,12 +81,11 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     chaos: # Goobstation
-      Infestation: 30
+      Infestation: 8
       Mess: 15
     eventType: Neutral # Goobstation
   # Goobstation
@@ -122,12 +119,11 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     chaos: # Goobstation
-      Infestation: 10
+      Infestation: 5
       Mess: 5
     eventType: Neutral # Goobstation
   # Goobstation
@@ -146,14 +142,13 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 15
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     minimumPlayers: 30
     chaos: # Goobstation
-      Infestation: 15
+      Infestation: 5
       Mess: 5
       Hostile: 1 # the very low gib snail prob
     eventType: Chaotic # Goobstation

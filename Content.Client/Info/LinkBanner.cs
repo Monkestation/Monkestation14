@@ -42,12 +42,14 @@ namespace Content.Client.Info
             AddInfoButton("rmc-ui-patreon", CCVars.InfoLinksPatreon);
 
             var linkAccount = UserInterfaceManager.GetUIController<LinkAccountUIController>();
-            var linkAccountButton = new Button
-            {
-                Text = Loc.GetString("rmc-ui-link-discord-account"),
-            };
-            linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
-            buttons.AddChild(linkAccountButton);
+            // Monkestation edit - disable account linking temporarily
+            // var linkAccountButton = new Button
+            // {
+            //     Text = Loc.GetString("rmc-ui-link-discord-account"),
+            // };
+            // linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
+            // buttons.AddChild(linkAccountButton);
+            // Monkestation edit end
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             var guidebookButton = new Button() { Text = Loc.GetString("server-info-guidebook-button") };

@@ -37,8 +37,7 @@
   - type: AnnounceOnSpawn
     message: narsie-has-risen
     sender: narsie-has-risen-sender
-    sound:
-      path: /Audio/Misc/narsie_rises.ogg
+    sound: NarsieRises
     color: red
   - type: CargoSellBlacklist
   # big nar'sie needs to see the universe

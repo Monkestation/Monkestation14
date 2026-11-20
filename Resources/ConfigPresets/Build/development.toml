@@ -69,3 +69,4 @@ ssd_sleep_time = 3600
 
 [voice]
 enabled = true
+barks_enabled = true #Monke

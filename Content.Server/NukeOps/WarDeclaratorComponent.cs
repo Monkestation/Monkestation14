@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: MIT
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Content.Server.GameTicking.Rules;
 using Content.Shared.NukeOps;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.NukeOps;
@@ -35,11 +37,12 @@ public sealed partial class WarDeclaratorComponent : Component
     [DataField]
     public Color Color = Color.Red;
 
+    // Monkestation edit - announcer variation
     /// <summary>
     /// War declaration sound file path
     /// </summary>
     [DataField]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+    public ProtoId<AnnouncementSoundPrototype> Sound = "War";
 
     /// <summary>
     /// Fluent ID for the declaration sender title

@@ -2,11 +2,11 @@
 
 using System.Linq;
 using Content.Server.GameTicking;
+using Content.Shared._Starlight.Administration.Events;
 using Content.Shared.Administration;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Robust.Server.GameObjects;
-using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
 
@@ -118,5 +118,7 @@ public sealed class AGhostCommand : LocalizedCommands
 
         var comp = _entities.GetComponent<GhostComponent>(ghost);
         ghostSystem.SetCanReturnToBody((ghost, comp), canReturn);
+
+        _entities.EntityNetManager.SendSystemNetworkMessage(new AdminGhostEvent(), player.Channel); // Starlight
     }
 }

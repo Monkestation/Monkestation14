@@ -7,8 +7,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-deathsquad-enroute
-    startAudio:
-      path: /Audio/StationEvents/rescue_imminent.ogg
+    startAudio: RescueImminent
     reoccurrenceDelay: 30
     duration: null
     maxOccurrences: 1
@@ -23,8 +22,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-cburn-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -38,8 +36,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-emergencyresponseteam-security-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -51,8 +48,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-emergencyresponseteam-medical-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -64,8 +60,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-emergencyresponseteam-engineering-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -77,8 +72,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-emergencyresponseteam-generic-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -90,8 +84,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-emergencyresponseteam-chaplain-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -103,8 +96,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-hecu-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
