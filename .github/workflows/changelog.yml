@@ -51,5 +51,5 @@ jobs:
         commit_message: "Automatic Changelog Generation"
         commit_user_name: RoboMonke
         commit_user_email: RoboMonke@users.noreply.github.com
-        file_pattern: Resources/Changelog/Monke14.yml
+        file_pattern: Resources/Changelog/MonkeChangelog.yml
         branch: master
