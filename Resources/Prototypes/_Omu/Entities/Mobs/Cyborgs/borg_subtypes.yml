@@ -3,7 +3,7 @@
 # Mining subtypes
 
 - type: borgSubtype
-  parentBorgType: mining_kerfo
+  parentBorgType: mining
   id: mining_kerfo
   spritePath: _Omu/Mobs/Silicon/Miner/Kerfo.rsi
   dummyPrototype: BorgChassisMiningKerfo
@@ -11,7 +11,7 @@
 # Engineer subtypes
 
 - type: borgSubtype
-  parentBorgType: engineering_kerfo
+  parentBorgType: engineering
   id: engineering_kerfo
   spritePath: _Omu/Mobs/Silicon/Engineering/Kerfo.rsi
   dummyPrototype: BorgChassisEngineerKerfo
@@ -19,7 +19,7 @@
 # Janitor subtypes
 
 - type: borgSubtype
-  parentBorgType: janitor_kerfo
+  parentBorgType: janitor
   id: janitor_kerfo
   spritePath: _Omu/Mobs/Silicon/Janitor/Kerfo.rsi
   dummyPrototype: BorgChassisJanitorKerfo
@@ -27,7 +27,7 @@
 # Medical subtypes
 
 - type: borgSubtype
-  parentBorgType: medical_kerfo
+  parentBorgType: medical
   id: medical_kerfo
   spritePath: _Omu/Mobs/Silicon/Medical/Kerfo.rsi
   dummyPrototype: BorgChassisMedicalKerfo
@@ -35,7 +35,7 @@
 # Service subtypes
 
 - type: borgSubtype
-  parentBorgType: service_kerfo
+  parentBorgType: service
   id: service_kerfo
   spritePath: _Omu/Mobs/Silicon/Service/Kerfo.rsi
   dummyPrototype: BorgChassisServiceKerfo
