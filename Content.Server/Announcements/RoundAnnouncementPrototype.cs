@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -14,7 +15,8 @@ public sealed partial class RoundAnnouncementPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField("sound")] public SoundSpecifier? Sound;
+    // Monkestation edit - announcer variation
+    [DataField("sound")] public ProtoId<AnnouncementSoundPrototype>? Sound;
 
     [DataField("message")] public string? Message;
 }

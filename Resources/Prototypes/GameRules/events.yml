@@ -131,12 +131,11 @@
   components:
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
     chaos: # Goobstation
-      Anomaly: 30
+      Anomaly: 15
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -154,8 +153,7 @@
     chaosScore: 40 # Goobstation
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -173,7 +171,7 @@
     earliestStart: 1
     duration: 1
     chaos: # Goobstation
-      Anomaly: 10
+      Anomaly: 5
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
@@ -189,7 +187,7 @@
     duration: 1
     minimumPlayers: 15
     chaos: # Goobstation
-      Power: 20
+      Power: 30
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -491,13 +489,12 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
     chaos: # Goobstation
-      Atmos: 20
-      Medical: 50
+      Atmos: 25
+      Medical: 15
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -514,8 +511,8 @@
     weight: 7
     duration: 240
     chaos: # Goobstation
-      Infestation: 60
-      Medical: 30
+      Infestation: 10
+      Medical: 15
     destruction: 1 # Goobstation
     eventType: Maintenance # Goobstation
   # Goobstation
@@ -531,12 +528,12 @@
     weight: 5
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
+    startAudio: GridPowerOff
+    endAudio: GridPowerOn
     duration: 60
     maxDuration: 120
+    chaos: # Goobstation
+      Power: 150
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
@@ -551,8 +548,7 @@
     weight: 8
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -583,8 +579,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -607,15 +602,14 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
+    startAudio: Aliens
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
-      Hostile: 20
-      Medical: 50
+      Hostile: 25
+      Medical: 15
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -631,15 +625,14 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
-      Medical: 50
+      Medical: 15
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -657,15 +650,14 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/aliens.ogg
+    startAudio: Aliens
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
-      Medical: 50
+      Medical: 15
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -680,15 +672,14 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
     weight: 3 # Goobstation - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
-      Medical: 50
+      Medical: 15
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -805,8 +796,7 @@
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
+    startAudio: Intercept
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
     chaos: # Goobstation
@@ -863,7 +853,7 @@
     chaos: # Goobstation
       Hostile: 10
       Friend: 20
-      Mess: 30
+      Mess: 20
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -880,7 +870,7 @@
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
     weight: 5
     chaos: # Goobstation
-      Hostile: 20 # for when they're actually properly hostile
+      Hostile: 15 # for when they're actually properly hostile
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
@@ -892,14 +882,13 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: Attention
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
     chaos: # Goobstation
-      Atmos: 15
-      Mess: 30
+      Atmos: 35
+      Mess: 80
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule

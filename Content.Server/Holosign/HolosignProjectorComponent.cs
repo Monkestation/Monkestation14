@@ -12,11 +12,7 @@ namespace Content.Server.Holosign
         [DataField("signProto")]
         public EntProtoId SignProto = "HolosignWetFloor";
 
-        /// <summary>
-        /// How much charge a single use expends.
-        /// </summary>
-        [ViewVariables(VVAccess.ReadWrite), DataField("chargeUse")]
-        public float ChargeUse = 50f;
+        // Monkestation edit - remove charge use
 
         // Goobstation
         [DataField]

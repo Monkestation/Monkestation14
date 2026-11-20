@@ -1,0 +1,11 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    Title="{Loc role-time-exemption-panel-title}" MinSize="410 500">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal" Margin="2">
+            <Label Name="PlayerNameLabel" MinWidth="100" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Name="RolesContainer"  Orientation="Vertical" />
+        <Button Name="SubmitButton" Text="{Loc role-time-exemption-panel-submit}" HorizontalExpand="True" />
+    </BoxContainer>
+</DefaultWindow>

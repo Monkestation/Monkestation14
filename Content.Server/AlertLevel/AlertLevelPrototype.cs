@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common._MACRO.Announcements;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -52,7 +53,8 @@ public sealed partial class AlertLevelDetail
     /// <summary>
     /// The sound that this alert level will play in-game once selected.
     /// </summary>
-    [DataField("sound")] public SoundSpecifier? Sound { get; private set; }
+    // Monkestation edit - announcer variations
+    [DataField("sound")] public ProtoId<AnnouncementSoundPrototype>? Sound { get; private set; }
 
     /// <summary>
     /// The color that this alert level will show in-game in chat.

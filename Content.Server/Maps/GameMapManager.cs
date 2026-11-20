@@ -35,6 +35,13 @@ public sealed class GameMapManager : IGameMapManager
     [ViewVariables(VVAccess.ReadOnly)]
     private int _mapQueueDepth = 1;
 
+    // Monkestation edit start - setmap command
+    [ViewVariables(VVAccess.ReadOnly)]
+    private GameMapPrototype? _adminSelectedMap;
+    [ViewVariables(VVAccess.ReadOnly)]
+    private int _adminSelectedMapDuration;
+    // Monkestation edit end
+
     private ISawmill _log = default!;
 
     public void Initialize()
@@ -174,6 +181,19 @@ public sealed class GameMapManager : IGameMapManager
 
     public void SelectMapByConfigRules()
     {
+        // Monkestation edit start - setmap command
+        if (_adminSelectedMapDuration > 0 && _adminSelectedMap != null)
+        {
+            _adminSelectedMapDuration--;
+            _selectedMap = _adminSelectedMap;
+            if (_adminSelectedMapDuration <= 0)
+            {
+                _adminSelectedMap = null;
+            }
+
+            return;
+        }
+        // Monkestation edit end
         if (_mapRotationEnabled)
         {
             _log.Info("selecting the next map from the rotation queue");
@@ -244,4 +264,22 @@ public sealed class GameMapManager : IGameMapManager
             _previousMaps.Dequeue();
         }
     }
+
+    // Monkestation edit start - setmap command
+    public bool SetMap(string gameMap, int rounds)
+    {
+        var immediate = GetSelectedMap() == null;
+        if (string.IsNullOrEmpty(gameMap) || rounds <= 0)
+        {
+            _adminSelectedMap = default!;
+            _adminSelectedMapDuration = 0;
+            return immediate;
+        }
+        if (!TryLookupMap(gameMap, out var map))
+            throw new ArgumentException($"The map \"{gameMap}\" is invalid!");
+        _adminSelectedMap = map;
+        _adminSelectedMapDuration = rounds;
+        return immediate;
+    }
+    // Monkestation edit end
 }

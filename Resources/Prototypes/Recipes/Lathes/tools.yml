@@ -187,7 +187,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HolofanProjector
-  result: HolofanProjectorEmpty
+  result: HolofanProjector # Monkestation edit - no empty variant, prints ready to use
   completetime: 8
   materials:
     Steel: 300
@@ -217,7 +217,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HoloprojectorField
-  result: HoloprojectorFieldEmpty
+  result: HoloprojectorField # Monkestation edit - no empty variant, prints ready to use
   completetime: 3
   materials:
     Steel: 500

@@ -586,6 +586,34 @@ namespace Content.Server.Database
             await db.DbContext.SaveChangesAsync();
         }
 
+        // Monkestation start
+        public async Task<List<MonkestationRoleTimeExemption>> GetRoleTimeExemptions(Guid player, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            return await db.DbContext.MonkestationRoleTimeExemptions
+                .Where(r => r.UserId == player)
+                .ToListAsync(cancel);
+        }
+
+        public async Task<List<MonkestationRoleTimeExemption>> GetRoleTimeExemptions(Guid player)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.MonkestationRoleTimeExemptions
+                .Where(r => r.UserId == player)
+                .ToListAsync();
+        }
+
+        public async Task SetRoleTimeExemptions(NetUserId userId, List<MonkestationRoleTimeExemption> data)
+        {
+            await using var db = await GetDb();
+            await db.DbContext.MonkestationRoleTimeExemptions.Where(r => r.UserId == userId).ExecuteDeleteAsync();
+            await db.DbContext.MonkestationRoleTimeExemptions.AddRangeAsync(data);
+            await db.DbContext.SaveChangesAsync();
+        }
+        // Monkestation end
+
         #endregion
 
         #region Player Records
