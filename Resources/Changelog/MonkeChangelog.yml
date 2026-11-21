@@ -148,5 +148,12 @@
   id: 17
   time: '2026-11-21T00:40:36Z'
   url: https://github.com/Monkestation/Monkestation14/pull/5
+- author: SirCannonFodder
+  changes:
+  - message: Cyborgs no longer make noise when switching modules.
+    type: Tweak
+  id: 18
+  time: '2026-11-21T00:43:55Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/11
 Name: Monkelog
 Order: -2
