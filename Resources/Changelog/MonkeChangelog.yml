@@ -1,6 +1,4 @@
-Name: Monkelog
-Order: -2
-Entries:
+﻿Entries:
 - author: adamsong
   changes:
   - message: Added role exemption panel
@@ -31,7 +29,9 @@ Entries:
   url: https://github.com/Monkestation/BoomerStation14/pull/22
 - author: AitorLogedo
   changes:
-  - message: Slimepeople can now passively slurp up puddles, and clean dirt and footprints off the floor while barefoot, feeding off what they absorb. They also stop leaving their own footprints while doing it. Toggle it with an action.
+  - message: Slimepeople can now passively slurp up puddles, and clean dirt and footprints
+      off the floor while barefoot, feeding off what they absorb. They also stop leaving
+      their own footprints while doing it. Toggle it with an action.
     type: Tweak
   id: 5
   time: '2026-07-13T20:01:00.0000000+00:00'
@@ -75,7 +75,9 @@ Entries:
   changes:
   - message: Flashlights and most handheld lights no longer need batteries to work.
     type: Tweak
-  - message: Holoprojectors now work like in SS13. You place holograms form a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
+  - message: Holoprojectors now work like in SS13. You place holograms form a limited
+      pool and can pick them back up, or wipe them all by using the projector in hand.
+      No more powercell.
     type: Tweak
   id: 10
   time: '2026-07-18T13:50:00.0000000+00:00'
@@ -103,7 +105,8 @@ Entries:
   url: https://github.com/Monkestation/BoomerStation14/pull/72
 - author: Skarlet
   changes:
-  - message: Ported Carpmosia's AI navmap overlay, which shows the station layout without static
+  - message: Ported Carpmosia's AI navmap overlay, which shows the station layout
+      without static
     type: Add
   id: 14
   time: '2026-08-08T07:09:00.0000000+00:00'
@@ -128,12 +131,22 @@ Entries:
   changes:
   - message: MORTIS voice for IPCs, Synths
     type: Add
-  - message: "Added a new voice for characters: Breathy. (Hmhmhm.)"
+  - message: 'Added a new voice for characters: Breathy. (Hmhmhm.)'
     type: Add
-  - message: Added Hydrakin voice to the selection, now Hydrakins (and Harpies) can have their own voice! Yay!
+  - message: Added Hydrakin voice to the selection, now Hydrakins (and Harpies) can
+      have their own voice! Yay!
     type: Add
-  - message: "Added a new voice for IPCs, Synths and Harpies: ST."
+  - message: 'Added a new voice for IPCs, Synths and Harpies: ST.'
     type: Add
   id: 16
   time: '2026-11-20T03:00:00.0000000+00:00'
   url: https://github.com/Monkestation/Monkestation14/pull/3
+- author: Blumbee
+  changes:
+  - message: 'PORT: Saving and Loading Hand Labeler Labels'
+    type: Add
+  id: 17
+  time: '2026-11-21T00:40:36Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/5
+Name: Monkelog
+Order: -2
