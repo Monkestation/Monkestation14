@@ -26,6 +26,7 @@ using Content.Shared.Whitelist; // Goobstation
 using Content.Shared.StatusIcon; // Goobstation
 using Content.Goobstation.Shared.Radio; // Goobstation
 using Content.Shared.Ghost; // Nuclear-14
+using Content.Shared._Starlight.Radio.Components; // Starlight
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -202,6 +203,14 @@ public sealed partial class RadioSystem : EntitySystem
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, GetNetEntity(messageSource), null);
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
         // Einstein Engines - Language end
+
+        // Starlight start
+        if (TryComp<RadioChimeComponent>(radioSource, out var chime))
+        {
+            msg.Chime = chime.Sound;
+            notUdsMsg.Chime = chime.Sound;
+        }
+        // Starlight end
 
         var sendAttemptEv = new RadioSendAttemptEvent(channel, radioSource);
         RaiseLocalEvent(ref sendAttemptEv);

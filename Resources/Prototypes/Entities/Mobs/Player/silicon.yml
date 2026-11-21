@@ -89,6 +89,9 @@
     - SiliconRadiation
   - type: ContentEye  #Goobstation
     maxZoom: 1.44,1.44
+  - type: RadioChime # Starlight
+    sound:
+      path: /Audio/_Starlight/Effects/Radio/ai.ogg
 
 - type: entity
   id: AiHeldIntellicard
