@@ -155,5 +155,15 @@
   id: 18
   time: '2026-11-21T00:43:55Z'
   url: https://github.com/Monkestation/Monkestation14/pull/11
+- author: nazulinnn
+  changes:
+  - message: Added Kerfo chassis options for the engineering, salvage, janitor, medical
+      and service cyborgs.
+    type: Add
+  - message: Added the syndicate service cyborg for admin-only spawn for now.
+    type: Add
+  id: 19
+  time: '2026-11-21T14:26:40Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/14
 Name: Monkelog
 Order: -2
