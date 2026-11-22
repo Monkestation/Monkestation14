@@ -165,5 +165,12 @@
   id: 19
   time: '2026-11-21T14:26:40Z'
   url: https://github.com/Monkestation/Monkestation14/pull/14
+- author: Blumbee
+  changes:
+  - message: Kefurborgs now no longer error when moving
+    type: Fix
+  id: 20
+  time: '2026-11-22T16:12:53Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/17
 Name: Monkelog
 Order: -2
