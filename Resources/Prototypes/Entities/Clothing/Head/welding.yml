@@ -23,6 +23,7 @@
     - WhitelistChameleon
     - WeldingMask
     - DroneUsable # Goobstation
+  - type: PlasmaUnfit #Omustation
   - type: HideLayerClothing
     slots:
     - Snout

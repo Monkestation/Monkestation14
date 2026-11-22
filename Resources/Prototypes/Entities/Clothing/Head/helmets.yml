@@ -18,6 +18,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: PlasmaUnfit #Omustation
   #- type: HideLayerClothing #Goobstation
   #  layers:
   #    HeadTop : HEAD

@@ -35,6 +35,7 @@
     - id: FireExtinguisher
     - !type:NestedSelector
       tableId: FillGeneralMiningExploration
+    - id: PinpointerSalvage # Omu Salvage Crew Pinpointer
 
 # Shaft miner items
 - type: entityTable
@@ -55,6 +56,7 @@
     - id: LavalandJaunter
     - !type:NestedSelector
       tableId: FillGeneralMiningExploration
+    - id: PinpointerSalvage # Omu Salvage Crew Pinpointer
 
 # Salvage specialist lockers
 - type: entity
