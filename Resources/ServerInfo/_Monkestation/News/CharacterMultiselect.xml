@@ -1,0 +1,15 @@
+<Document>
+  #  Character Multiselect
+
+  Characters now can be individually enabled and disabled, job preferences are decoupled from the character.
+  When you are assigned a job, a character will be selected out of the characters that have that job enabled, weighted by those characters preferences.
+
+  If no character has your job enabled, the first enabled character will be used (re-arrange by dragging characters in the editor).
+  This also applies to latejoining.
+
+  Job preferences are editing in the lobby by clicking "Allow dragging" and then dragging to rearrange the jobs by priority.
+
+  <Box HorizontalAlignment="Right">
+    [italic]- adamsogm[/italic]
+  </Box>
+</Document>
