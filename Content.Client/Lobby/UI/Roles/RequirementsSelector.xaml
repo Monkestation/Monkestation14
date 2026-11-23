@@ -9,12 +9,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <Label Name="TitleLabel"
            StyleClasses="HullText"
            Margin="5 0"
-           SetWidth="220"
+           SetWidth="360"
            MouseFilter="Stop"/>
     <!-- Omu start -->
     <OptionButton Name="TitleOptions"
                   Margin="5 0"
-                  SetWidth="220"
+                  SetWidth="360"
                   Visible="False"/>
     <!-- Omu end -->
 
