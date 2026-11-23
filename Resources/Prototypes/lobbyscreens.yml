@@ -8,12 +8,6 @@
   artist: blooodyspy
 
 - type: lobbyBackground
-  id: mime2
-  background: /Textures/LobbyScreens/mime2.webp
-  name: Mime.
-  artist: .cheeki
-
-- type: lobbyBackground
   id: cargopoker
   background: /Textures/LobbyScreens/cargopoker.webp
   name: Cargo Poker Night
