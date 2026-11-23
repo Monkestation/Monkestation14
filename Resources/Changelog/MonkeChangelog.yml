@@ -180,5 +180,12 @@
   id: 21
   time: '2026-11-23T00:26:00Z'
   url: https://github.com/Monkestation/Monkestation14/pull/18
+- author: adamsong
+  changes:
+  - message: Added multi character queueing
+    type: Add
+  id: 22
+  time: '2026-11-23T04:38:07Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/19
 Name: Monkelog
 Order: -2
