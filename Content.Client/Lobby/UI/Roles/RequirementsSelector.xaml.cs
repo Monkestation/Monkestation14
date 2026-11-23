@@ -81,6 +81,7 @@ public sealed partial class RequirementsSelector : BoxContainer
 
             OnAlternateTitleSelected?.Invoke(args.Id == 0 ? null : _alternateTitles[args.Id - 1]);
         };
+        HullStyler.Apply(TitleOptions);
         // Omu end
     }
 
