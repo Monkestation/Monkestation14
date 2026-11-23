@@ -121,7 +121,6 @@
     sprite: _Goobstation/Structures/posters.rsi
     state: goob_poster12_legit
 
-Degoobify
 - type: entity
   parent: PosterBase
   id: PosterLegitGoobDurkPlush
