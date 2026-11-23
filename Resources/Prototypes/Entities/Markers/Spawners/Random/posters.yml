@@ -98,7 +98,7 @@
       - PosterContrabandExoRun
       - PosterContrabandExoChomp
       - PosterContrabandGoobChuckler # Goobstation
-      - PosterContrabandGoobYakub # Goobstation
+#      - PosterContrabandGoobYakub # Goobstation # Degoobify
       - PosterContrabandGoobRedFOSS # Goobstation
     chance: 1
 
