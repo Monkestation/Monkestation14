@@ -982,12 +982,17 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.HasIndex("UserId");
 
                     b.ToTable("monkestation_role_time_exemptions", (string)null);
-                        .HasColumnName("job_alternate_title_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
                 });    
             modelBuilder.Entity("Content.Server.Database.JobAlternateTitle", b =>
                 { 
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("job_alternate_title_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+
                     b.Property<string>("AlternateTitle")
                         .IsRequired()
                         .HasColumnType("text")

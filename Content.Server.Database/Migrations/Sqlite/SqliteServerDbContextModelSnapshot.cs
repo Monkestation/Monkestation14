@@ -926,11 +926,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasIndex("UserId");
 
                     b.ToTable("monkestation_role_time_exemptions", (string)null);
-                        .HasColumnName("job_alternate_title_id");
                 });
-                
+
             modelBuilder.Entity("Content.Server.Database.JobAlternateTitle", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_alternate_title_id");
+
                     b.Property<string>("AlternateTitle")
                         .IsRequired()
                         .HasColumnType("TEXT")
