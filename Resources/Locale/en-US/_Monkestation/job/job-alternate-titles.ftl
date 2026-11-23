@@ -189,3 +189,20 @@ job-name-alt-reporter-4 = Journalist
 job-name-alt-radiohost-1 = Radio DJ
 job-name-alt-radiohost-2 = Broadcaster
 job-name-alt-radiohost-3 = Talk Show Host
+
+job-name-alt-ai-1 = Station Intelligence
+job-name-alt-ai-2 = Automated Overseer
+
+job-name-alt-tider-1 = Civilian
+job-name-alt-tider-2 = Tourist
+job-name-alt-tider-3 = Businessman
+job-name-alt-tider-4 = Businesswoman
+job-name-alt-tider-5 = Trader
+job-name-alt-tider-6 = Entertainer
+job-name-alt-tider-7 = Freelancer
+job-name-alt-tider-8 = Artist
+job-name-alt-tider-9 = Off-Duty Staff
+job-name-alt-tider-10 = Off-Duty Crew
+job-name-alt-tider-11 = Test Subject
+job-name-alt-tider-12 = Vagabond
+job-name-alt-tider-13 = Bananotrasen CEO
