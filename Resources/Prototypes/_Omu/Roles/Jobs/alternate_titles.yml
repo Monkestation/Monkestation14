@@ -16,7 +16,13 @@
   id: AlternateTitlesSalvageSpecialist
   values:
     prefix: job-name-alt-salvagespec-
-    count: 4
+    count: 2
+
+- type: localizedDataset
+  id: AlternateTitlesShaftMiner
+  values:
+    prefix: job-name-alt-miner-
+    count: 2    
 
 - type: localizedDataset
   id: AlternateTitlesCourier

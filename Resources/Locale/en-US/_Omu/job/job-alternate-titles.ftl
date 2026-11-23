@@ -11,10 +11,11 @@ job-name-alt-qm-2 = Deck Chief
 job-name-alt-qm-3 = Warehouse Supervisor
 job-name-alt-qm-4 = Logistics Coordinator
 
-job-name-alt-salvagespec-1 = Mining Specialist
-job-name-alt-salvagespec-2 = Field Geologist
-job-name-alt-salvagespec-3 = Drill Technician
-job-name-alt-salvagespec-4 = Shipbreaking Specialist
+job-name-alt-salvagespec-1 = Drill Technician
+job-name-alt-salvagespec-2 = Shipbreaking Specialist
+
+job-name-alt-miner-1 = Mining Specialist
+job-name-alt-miner-2 = Field Geologist
 
 job-name-alt-courier-1 = Mail Carrier
 job-name-alt-courier-2 = Dispatch Runner
@@ -175,7 +176,7 @@ job-name-alt-security-sergeant-2 = Drill Instructor
 
 job-name-alt-brigmedic-1 = Combat Medic
 job-name-alt-brigmedic-2 = Field Medic
-job-name-alt-brigmedic-3 = Brigmedic
+job-name-alt-brigmedic-3 = Corpsman
 
 job-name-alt-transit-prisoner-1 = Detainee
 job-name-alt-transit-prisoner-2 = Inmate
