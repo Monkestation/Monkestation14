@@ -32,7 +32,8 @@ website = "https://monkestation.com/"
 wiki = "https://wiki.monkestation.com/Main_Page"
 patreon = "https://www.patreon.com/dukeook"
 bug_report = "https://github.com/Monkestation/forky-station/issues"
-appeal = "https://discord.gg/monkestation, #ss14-create-a-ticket"
+appeal = "https://forum.monkestation.com/t/monkestation-14"
+forum = "https://forum.monkestation.com/"
 
 [server]
 id = "monkestation14"
