@@ -30,16 +30,6 @@
   copyright: "Diebeck, downscaled by Piras314"
   source: "https://forums.goobstation.com"
 
-- files: ["GoobNukie.webp"]
-  license: "CC-BY-SA-3.0"
-  copyright: "@Cheeki - on discord"
-  source: "https://forums.goobstation.com"
-
-- files: ["grandtheftgoob.webp"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Piras314"
-  source: "https://forums.goobstation.com"
-
 - files: ["greytideworldwide.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Piras314"
@@ -59,11 +49,6 @@
   license: "CC-BY-SA-3.0"
   copyright: "asardonicsailor"
   source: "https://x.com/ASardonicSailor"
-
-- files: ["StarGoob.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "H2Owe"
-  source: "https://github.com/H2Owe"
 
 - files: ["syndi_kek.webp"]
   license: "CC-BY-SA-3.0"
@@ -127,24 +112,9 @@
   copyright: "@asardonicsailor on discord"
   source: "https://discord.gg/goobstation"
 
-- files: ["medbayexperience.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@bloomyex on discord"
-  source: "https://discord.gg/goobstation"
-
 - files: ["fuckyoudeath.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "@boiwab on discord"
-  source: "https://discord.gg/goobstation"
-
-- files: ["thatfuckingratthatihate.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@bright1905 on discord"
-  source: "https://discord.gg/goobstation"
-
-- files: ["whiskeyechowhiskeytime.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@brizby on discord"
   source: "https://discord.gg/goobstation"
 
 - files: ["theantags.webp"]
@@ -202,21 +172,6 @@
   copyright: "@mr.fisher on discord"
   source: "https://discord.gg/goobstation"
 
-- files: ["JustAnotherShift.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@frfluffyfox on discord"
-  source: "https://discord.gg/goobstation"
-
-- files: ["aCalmEvac.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@navi__.  on discord"
-  source: "https://discord.gg/goobstation"
-
-- files: ["ChitnidsDiscoverFire.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@olivehojoe on discord"
-  source: "https://discord.gg/goobstation"
-
 - files: ["Get_Off_MrHonker's_Wild_Ride.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "@onetruehudson on discord"
@@ -242,19 +197,9 @@
   copyright: "@orchard. on discord"
   source: "https://discord.gg/goobstation"
 
-- files: ["CriminallyUnderpaidBabysitter.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@orchard. on discord"
-  source: "https://discord.gg/goobstation"
-
 - files: ["FleshHereticMoneyGang.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "@Pinkabee on discord"
-  source: "https://discord.gg/goobstation"
-
-- files: ["NormalNanotrasenMoment.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@pistos2225 on discord"
   source: "https://discord.gg/goobstation"
 
 - files: ["Memories.webp"]
@@ -265,11 +210,6 @@
 - files: ["Standoff.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "@rtx420 on discord"
-  source: "https://discord.gg/goobstation"
-
-- files: ["ThreeBrizbyMoon.webp"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "@singularjames on discord"
   source: "https://discord.gg/goobstation"
 
 - files: ["AFriendlyGameOfCards.webp"]
