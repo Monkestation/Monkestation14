@@ -148,7 +148,7 @@
   id: AlternateTitlesMedicalDoctor
   values:
     prefix: job-name-alt-doctor-
-    count: 6
+    count: 7
 
 - type: localizedDataset
   id: AlternateTitlesChemist
