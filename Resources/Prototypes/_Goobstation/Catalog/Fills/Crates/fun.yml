@@ -34,7 +34,7 @@
       amount: 3
     - id: PlushieBingleSmall
     - id: PlushieBongle
-    - id: PlushieBingleYakub
+#    - id: PlushieBingleYakub #Degoobify
     - id: PlushieBinglePony
 
 - type: entity

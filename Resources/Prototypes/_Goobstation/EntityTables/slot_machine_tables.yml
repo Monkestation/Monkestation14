@@ -78,6 +78,7 @@
     - !type:NestedSelector
       tableId: Plushies
 
+# Commented out plushies below are part of the degoobify PR
 - type: entityTable
   id: Plushies
   table: !type:GroupSelector
@@ -85,49 +86,49 @@
     - id: PlushieMoth
     - id: PlushieHuman
     - id: PlushiePenguin
-    - id: PlushieXeve
-    - id: PlushieDurk
-    - id: PlushieMnwaar
+#    - id: PlushieXeve
+#    - id: PlushieDurk
+#    - id: PlushieMnwaar
     - id: PlushieLouie
     - id: FoamWonderprod
     - id: PlushieBingle
     - id: PlushieBongle
     - id: PlushieBinglePony
     - id: PlushieAbductor
-    - id: PlushieJvne
-    - id: PlushieFern
-    - id: PlushieNigel
-    - id: PlushieBrizby
-    - id: PlushieBoggle
-    - id: PlushieLehmin
-    - id: PlushieWachtel
-    - id: PlushieLeguia
-    - id: PlushiePasha
-    - id: PlushieLeoMalone
-    - id: PlushieRedstonewolf
-    - id: PlushieDoremyZerg
-    - id: PlushieSanyati
-    - id: PlushieHarel
+#    - id: PlushieJvne
+#    - id: PlushieFern
+#    - id: PlushieNigel
+#    - id: PlushieBrizby
+#    - id: PlushieBoggle
+#    - id: PlushieLehmin
+#    - id: PlushieWachtel
+#    - id: PlushieLeguia
+#    - id: PlushiePasha
+#    - id: PlushieLeoMalone
+#    - id: PlushieRedstonewolf
+#    - id: PlushieDoremyZerg
+#    - id: PlushieSanyati
+#    - id: PlushieHarel
 
 - type: entityTable
   id: PlushiesEvil
   table: !type:GroupSelector
     children:
-    - id: EvilPlushieXeve
-    - id: EvilPlushieBoggle
-    - id: EvilPlushieBrizby
-    - id: EvilPlushieNigel
-    - id: EvilPlushieFern
-    - id: EvilPlushieJvne
-    - id: EvilPlushieMnwaar
-    - id: EvilPlushieDurk
+#    - id: EvilPlushieXeve
+#    - id: EvilPlushieBoggle
+#    - id: EvilPlushieBrizby
+#    - id: EvilPlushieNigel
+#    - id: EvilPlushieFern
+#    - id: EvilPlushieJvne
+#    - id: EvilPlushieMnwaar
+#    - id: EvilPlushieDurk
     - id: EvilPlushieLouie
-    - id: EvilPlushieWachtel
-    - id: EvilPlushieLeguia
-    - id: EvilPlushiePasha
-    - id: EvilPlushieTwofish
-    - id: EvilPlushieLeoMalone
-    - id: EvilPlushieRedstonewolf
-    - id: EvilPlushieDoremyZerg
-    - id: EvilPlushieSanyati
-    - id: EvilPlushieHarel
+#    - id: EvilPlushieWachtel
+#    - id: EvilPlushieLeguia
+#    - id: EvilPlushiePasha
+#    - id: EvilPlushieTwofish
+#    - id: EvilPlushieLeoMalone
+#    - id: EvilPlushieRedstonewolf
+#    - id: EvilPlushieDoremyZerg
+#    - id: EvilPlushieSanyati
+#    - id: EvilPlushieHarel

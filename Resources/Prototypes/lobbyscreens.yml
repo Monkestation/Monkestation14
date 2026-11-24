@@ -8,12 +8,6 @@
   artist: blooodyspy
 
 - type: lobbyBackground
-  id: mime2
-  background: /Textures/LobbyScreens/mime2.webp
-  name: Mime.
-  artist: .cheeki
-
-- type: lobbyBackground
   id: cargopoker
   background: /Textures/LobbyScreens/cargopoker.webp
   name: Cargo Poker Night
@@ -44,28 +38,10 @@
   artist: asardonicsailor
 
 - type: lobbyBackground
-  id: medbayexperience
-  background: /Textures/LobbyScreens/medbayexperience.webp
-  name: Medbay Experience
-  artist: bloomyex
-
-- type: lobbyBackground
   id: fuckyoudeath
   background: /Textures/LobbyScreens/fuckyoudeath.webp
   name: Fuck You, Death
   artist: boiwab
-
-- type: lobbyBackground
-  id: thatfuckingratthatihate
-  background: /Textures/LobbyScreens/thatfuckingratthatihate.webp
-  name: That Fucking Rat That I Hate
-  artist: bright1905
-
-- type: lobbyBackground
-  id: whiskeyechowhiskeytime
-  background: /Textures/LobbyScreens/whiskeyechowhiskeytime.webp
-  name: Whiskey Echo Whiskey Time
-  artist: brizby
 
 - type: lobbyBackground
   id: theantags
@@ -132,25 +108,7 @@
   background: /Textures/LobbyScreens/SpaceStation64.webp
   name: Space Station 64
   artist: mr.fisher
-
-- type: lobbyBackground
-  id: JustAnotherShift
-  background: /Textures/LobbyScreens/JustAnotherShift.webp
-  name: Just Another Shift
-  artist: frflyffufox
-
-- type: lobbyBackground
-  id: aCalmEvac
-  background: /Textures/LobbyScreens/aCalmEvac.webp
-  name: A Calm Evac
-  artist: navi__.
-
-- type: lobbyBackground
-  id: ChitnidsDiscoverFire
-  background: /Textures/LobbyScreens/ChitnidsDiscoverFire.webp
-  name: Chitnids Discovering Fire
-  artist: olivehojoe
-
+  
 - type: lobbyBackground
   id: Get_Off_MrHonker's_Wild_Ride
   background: /Textures/LobbyScreens/Get_Off_MrHonker's_Wild_Ride.webp
@@ -182,22 +140,10 @@
   artist: orchard.
 
 - type: lobbyBackground
-  id: CriminallyUnderpaidBabysitter
-  background: /Textures/LobbyScreens/CriminallyUnderpaidBabysitter.webp
-  name: Criminally Underpaid Babysitter
-  artist: orchard.
-
-- type: lobbyBackground
   id: FleshHereticMoneyGang
   background: /Textures/LobbyScreens/FleshHereticMoneyGang.webp
   name: Flesh Heretic Money Gang
   artist: Pinkabee
-
-- type: lobbyBackground
-  id: NormalNanotrasenMoment
-  background: /Textures/LobbyScreens/NormalNanotrasenMoment.webp
-  name: Normal Nanotrasen Moment
-  artist: pistos2225
 
 - type: lobbyBackground
   id: Memories
@@ -210,12 +156,6 @@
   background: /Textures/LobbyScreens/Standoff.webp
   name: Standoff
   artist: rtx420
-
-- type: lobbyBackground
-  id: ThreeBrizbyMoon
-  background: /Textures/LobbyScreens/ThreeBrizbyMoon.webp
-  name: Three Brizby Moon
-  artist: singularjames
 
 - type: lobbyBackground
   id: AFriendlyGameOfCards
@@ -296,18 +236,6 @@
   artist: Diebeck
 
 - type: lobbyBackground
-  id: GoobNukie
-  background: /Textures/LobbyScreens/GoobNukie.webp
-  name: Goob Nukie
-  artist: Cheeki
-
-- type: lobbyBackground
-  id: grandtheftgoob
-  background: /Textures/LobbyScreens/grandtheftgoob.webp
-  name: Grand Theft Goob
-  artist: Piras314
-
-- type: lobbyBackground
   id: greytideworldwide
   background: /Textures/LobbyScreens/greytideworldwide.webp
   name: Greytide Worldwide
@@ -330,18 +258,6 @@
   background: /Textures/LobbyScreens/tideractivities.webp
   name: Tider Activities
   artist: asardonicsailor
-
-- type: lobbyBackground
-  id: moneyspread-bingle
-  background: /Textures/LobbyScreens/binglemoneyspread.webp
-  name: Bingle Flex
-  artist: LFMoth
-
-- type: lobbyBackground
-  id: stargoob
-  background: /Textures/LobbyScreens/StarGoob.webp
-  name: GoobWars
-  artist: Jvne
 
 - type: lobbyBackground
   id: ling-in-my-vents
