@@ -26,6 +26,7 @@ job-name-alt-miner-2 = Field Geologist
 job-name-alt-miner-3 = Spelunker
 job-name-alt-miner-4 = Prospector
 job-name-alt-miner-5 = Big Game Hunter
+job-name-alt-miner-6 = Chasm Locator
 
 job-name-alt-bartender-1 = Mixologist
 job-name-alt-bartender-2 = Barista

@@ -22,7 +22,7 @@
   id: AlternateTitlesShaftMiner
   values:
     prefix: job-name-alt-miner-
-    count: 5    
+    count: 6    
 
 - type: localizedDataset
   id: AlternateTitlesBartender
