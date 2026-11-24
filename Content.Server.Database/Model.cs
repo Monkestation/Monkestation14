@@ -94,6 +94,10 @@ namespace Content.Server.Database
             modelBuilder.Entity<JobAlternateTitle>()
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.JobName })
                 .IsUnique();
+            modelBuilder.Entity<PlayerJobPriority>()
+                .HasIndex(p => new { p.PreferenceId, p.JobName })
+                .IsUnique();
+
             // Omu end
 
             modelBuilder.Entity<ProfileRoleLoadout>()
@@ -463,6 +467,7 @@ namespace Content.Server.Database
         public string AdminOOCColor { get; set; } = null!;
         public List<string> ConstructionFavorites { get; set; } = new();
         public List<Profile> Profiles { get; } = new();
+        public List<PlayerJobPriority> JobPriorities { get; } = new(); // Omu
     }
 
     public class Profile
@@ -494,6 +499,8 @@ namespace Content.Server.Database
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
+        public bool Active { get; set; } // Omu
+        public int Position { get; set; } // Omu
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
@@ -545,6 +552,14 @@ namespace Content.Server.Database
 
         public string JobName { get; set; } = null!;
         public string AlternateTitle { get; set; } = null!;
+    public class PlayerJobPriority
+    {
+        public int Id { get; set; }
+        public Preference Preference { get; set; } = null!;
+        public int PreferenceId { get; set; }
+
+        public string JobName { get; set; } = null!;
+        public DbJobPriority Priority { get; set; }
     }
     // Omu end
 

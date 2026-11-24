@@ -165,5 +165,27 @@
   id: 19
   time: '2026-11-21T14:26:40Z'
   url: https://github.com/Monkestation/Monkestation14/pull/14
+- author: Blumbee
+  changes:
+  - message: Kefurborgs now no longer error when moving
+    type: Fix
+  id: 20
+  time: '2026-11-22T16:12:53Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/17
+- author: DuskTheSnep
+  changes:
+  - message: Added various colored medical masks to doctor loadouts. The dye smell
+      will wash out. Probably.
+    type: Add
+  id: 21
+  time: '2026-11-23T00:26:00Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/18
+- author: adamsong
+  changes:
+  - message: Added multi character queueing
+    type: Add
+  id: 22
+  time: '2026-11-23T04:38:07Z'
+  url: https://github.com/Monkestation/Monkestation14/pull/19
 Name: Monkelog
 Order: -2

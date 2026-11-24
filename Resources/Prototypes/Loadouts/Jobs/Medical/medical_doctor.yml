@@ -193,6 +193,7 @@
   id: SterileMask
   equipment:
     mask: ClothingMaskSterile
+  groupBy: "mask" # Omu
 
 #Eyewear
 - type: loadout

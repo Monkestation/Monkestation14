@@ -1,0 +1,6 @@
+- type: newsEntry
+  id: CharacterMultiselect
+  title: news-character-multiselect-title
+  summary: news-character-multiselect-summary
+  date: 2026-11-22
+  document: /ServerInfo/_Monkestation/News/CharacterMultiselect.xml
