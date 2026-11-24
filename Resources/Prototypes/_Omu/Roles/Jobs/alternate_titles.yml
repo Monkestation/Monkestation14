@@ -4,31 +4,25 @@
   id: AlternateTitlesCargoTechnician
   values:
     prefix: job-name-alt-cargotech-
-    count: 5
+    count: 8
 
 - type: localizedDataset
   id: AlternateTitlesQuartermaster
   values:
     prefix: job-name-alt-qm-
-    count: 4
+    count: 6
 
 - type: localizedDataset
   id: AlternateTitlesSalvageSpecialist
   values:
     prefix: job-name-alt-salvagespec-
-    count: 2
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesShaftMiner
   values:
     prefix: job-name-alt-miner-
-    count: 2    
-
-- type: localizedDataset
-  id: AlternateTitlesCourier
-  values:
-    prefix: job-name-alt-courier-
-    count: 3
+    count: 5    
 
 - type: localizedDataset
   id: AlternateTitlesBartender
@@ -40,31 +34,31 @@
   id: AlternateTitlesBotanist
   values:
     prefix: job-name-alt-botanist-
-    count: 5
+    count: 9
 
 - type: localizedDataset
   id: AlternateTitlesChaplain
   values:
     prefix: job-name-alt-chaplain-
-    count: 9
+    count: 12
 
 - type: localizedDataset
   id: AlternateTitlesChef
   values:
     prefix: job-name-alt-chef-
-    count: 5
+    count: 6
 
 - type: localizedDataset
   id: AlternateTitlesClown
   values:
     prefix: job-name-alt-clown-
-    count: 4
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesJanitor
   values:
     prefix: job-name-alt-janitor-
-    count: 4
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesLawyer
@@ -100,19 +94,19 @@
   id: AlternateTitlesCaptain
   values:
     prefix: job-name-alt-captain-
-    count: 6
+    count: 9
 
 - type: localizedDataset
   id: AlternateTitlesHeadOfPersonnel
   values:
     prefix: job-name-alt-hop-
-    count: 3
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesChiefEngineer
   values:
     prefix: job-name-alt-ce-
-    count: 2
+    count: 3
 
 - type: localizedDataset
   id: AlternateTitlesChiefMedicalOfficer
@@ -124,19 +118,13 @@
   id: AlternateTitlesHeadOfSecurity
   values:
     prefix: job-name-alt-hos-
-    count: 3
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesResearchDirector
   values:
     prefix: job-name-alt-rd-
-    count: 5
-
-- type: localizedDataset
-  id: AlternateTitlesNanotrasenRepresentative
-  values:
-    prefix: job-name-alt-ntr-
-    count: 3
+    count: 6
 
 - type: localizedDataset
   id: AlternateTitlesAdministrativeAssistant
@@ -148,13 +136,13 @@
   id: AlternateTitlesAtmosphericTechnician
   values:
     prefix: job-name-alt-atmostech-
-    count: 3
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesStationEngineer
   values:
     prefix: job-name-alt-engineer-
-    count: 5
+    count: 10
 
 - type: localizedDataset
   id: AlternateTitlesMedicalDoctor
@@ -184,49 +172,43 @@
   id: AlternateTitlesVirologist
   values:
     prefix: job-name-alt-virologist-
-    count: 3
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesScientist
   values:
     prefix: job-name-alt-scientist-
-    count: 5
+    count: 11
 
 - type: localizedDataset
   id: AlternateTitlesRoboticist
   values:
     prefix: job-name-alt-roboticist-
-    count: 3
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesWarden
   values:
     prefix: job-name-alt-warden-
-    count: 2
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesDetective
   values:
     prefix: job-name-alt-detective-
-    count: 3
-
-- type: localizedDataset
-  id: AlternateTitlesSecuritySergeant
-  values:
-    prefix: job-name-alt-security-sergeant-
-    count: 2
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesBrigmedic
   values:
     prefix: job-name-alt-brigmedic-
-    count: 3
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesTransitPrisoner
   values:
     prefix: job-name-alt-transit-prisoner-
-    count: 2
+    count: 8
 
 - type: localizedDataset
   id: AlternateTitlesReporter
@@ -239,3 +221,33 @@
   values:
     prefix: job-name-alt-radiohost-
     count: 3
+
+- type: localizedDataset
+  id: AlternateTitlesStationAi
+  values:
+    prefix: job-name-alt-ai-
+    count: 2
+
+- type: localizedDataset
+  id: AlternateTitlesPassenger
+  values:
+    prefix: job-name-alt-tider-
+    count: 13
+
+- type: localizedDataset
+  id: AlternateTitlesBlueshieldOfficer
+  values:
+    prefix: job-name-alt-bso-
+    count: 5
+
+- type: localizedDataset
+  id: AlternateTitlesBorg
+  values:
+    prefix: job-name-alt-borg-
+    count: 3
+
+- type: localizedDataset
+  id: AlternateTitlesSecurityOfficer
+  values:
+    prefix: job-name-alt-secoff-
+    count: 5
