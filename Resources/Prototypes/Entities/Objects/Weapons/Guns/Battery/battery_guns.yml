@@ -58,6 +58,8 @@
     missChance: 0.4
     spreadMultiplier: 3
     spreadAddition: 40
+  - type: AltFireMelee # Omu, this was missing from the above Goob section to actually let the guns melee
+    attackType: Heavy
 
 - type: entity
   parent: [BaseWeaponBattery, BaseGunWieldable]
@@ -1103,6 +1105,9 @@
     startingCharge: 1200 # Goobstation
   - type: StealTarget # Goobstation
     stealGroup: WeaponEnergyShotgun
+  - type: BatterySelfRecharger # Omu, re-readd self-recharging on the e-shotty
+    autoRechargeRate: 28 # This is to compensate for 1050 --> 1200 charge; formerly 24
+    autoRechargePauseTime: 30
 
 - type: entity
   name: energy magnum
