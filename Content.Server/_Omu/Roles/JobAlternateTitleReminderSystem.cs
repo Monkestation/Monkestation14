@@ -9,18 +9,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Omu.Server.Roles;
 
-public sealed class JobAlternateTitleReminderSystem : EntitySystem
+public sealed partial class JobAlternateTitleReminderSystem : EntitySystem
 {
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly JobAlternateTitleSystem _alternateTitles = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
-    }
-
+    [SubscribeLocalEvent]
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
     {
         if (ev.JobId == null || !_prototypes.TryIndex<JobPrototype>(ev.JobId, out var job))
