@@ -552,6 +552,7 @@ namespace Content.Server.Database
 
         public string JobName { get; set; } = null!;
         public string AlternateTitle { get; set; } = null!;
+    }    
     public class PlayerJobPriority
     {
         public int Id { get; set; }
