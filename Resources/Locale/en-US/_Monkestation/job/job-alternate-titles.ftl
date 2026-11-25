@@ -19,7 +19,7 @@ job-name-alt-qm-6 = Head of Supply
 job-name-alt-salvagespec-1 = Drill Technician
 job-name-alt-salvagespec-2 = Shipbreaking Specialist
 job-name-alt-salvagespec-3 = Recycling Specialist
-job-name-alt-salvagespec-4 = Asteroid Excavato
+job-name-alt-salvagespec-4 = Asteroid Excavator
 
 job-name-alt-miner-1 = Mining Specialist
 job-name-alt-miner-2 = Field Geologist
@@ -145,7 +145,7 @@ job-name-alt-atmostech-1 = Fire Suppression Specialist
 job-name-alt-atmostech-2 = Life Support Technician
 job-name-alt-atmostech-3 = EVA Technician
 job-name-alt-atmostech-4 = Firefighter
-job-name-alt-atmostech-5 = Apprentice Atmos Technician
+job-name-alt-atmostech-5 = Jr. Atmos Technician
 
 job-name-alt-engineer-1 = Maintenance Technician
 job-name-alt-engineer-2 = Mechanic
@@ -208,7 +208,7 @@ job-name-alt-warden-5 = Jailer
 
 job-name-alt-detective-1 = Forensic Investigator
 job-name-alt-detective-2 = Private Investigator
-job-name-alt-detective-3 = Inspector
+job-name-alt-detective-3 = Gumshoe
 job-name-alt-detective-4 = Lead Investigator
 job-name-alt-detective-5 = Gristled PI
 
