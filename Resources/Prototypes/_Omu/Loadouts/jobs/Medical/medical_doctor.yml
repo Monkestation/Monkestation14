@@ -46,3 +46,9 @@
   equipment:
     mask: ClothingMaskSterileWhite
   groupBy: "mask"
+
+# OuterClothing
+- type: loadout
+  id: ClothingLabcoatLong
+  equipment:
+    outerClothing: ClothingOuterCoatMedicalcoatLong

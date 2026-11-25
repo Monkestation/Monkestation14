@@ -221,6 +221,10 @@
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
+  - HoPParadeUniformMale # OmuStation
+  - HoPParadeUniformFemale # OmuStation
+  - HoPTurtleneckMale # OmuStation
+  - HoPTurtleneckSkirtFemale # OmuStation
   - HoPJumpsuitMilitary # goob
   - HoPSummerShirt # goob
 
@@ -249,7 +253,10 @@
   minLimit: 0
   loadouts:
   - HoPWintercoat
-  - HoPLongcoat #goob
+  #- HoPLongcoat #goob #Monke, same but diffrent colour than one below
+  - ClothingFormalHoPCoat # Omu
+  - ClothingFormalHoPJacket # Omu
+  - ClothingFormalHoPDress # Omu
 
 - type: loadoutGroup
   id: HoPJobTrinkets
@@ -827,6 +834,8 @@
   - QuartermasterJumpskirt
   - QuartermasterTurtleneck
   - QuartermasterTurtleneckSkirt
+  - QuartermasterUniform # OmuStation
+  - QuartermasterUniformSkirt # OmuStation
   - QuartermasterFormalSuit
   - QuartermasterMJ # goob
   - QMSummerShirt # goob
@@ -876,8 +885,15 @@
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
   - CargoTechnicianOveralls #Goob
-  - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail # Fixmail
+  - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
+  # OmuStation Start
+  - CargoTechnicianSweater
+  - CargoTechnicianSweaterSkirt
+  - CargoTechnicianShortPantsIfuckinghateyouifyouwearthisbtw
+  - CargoTechnicianShortSkirtsInsteadofPants
+  # OmuStation End
+
   - CargoTechMJ # goob
   - MailCarrierMJ #Goob
 
@@ -897,6 +913,7 @@
   loadouts:
   - CargoTechnicianWintercoat
   - CargoTechnicianWintercoatMail # Goob/DeltaV - Mail # todo marty fixmail
+  - CargoTechnicianJacket # OmuStation
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
@@ -1154,6 +1171,7 @@
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
+  - ResearchDirectorDecoratedCloak
   - ResearchDirectorEnsemble # goob
 
 - type: loadoutGroup
@@ -1175,6 +1193,7 @@
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
   - ResearchDirectorLabCoatPurple #goob
+  - LongScienceCoat # OmuStation
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
@@ -1239,6 +1258,7 @@
   - ScienceWintercoat
   - RoboticistLabCoat
   - RoboticistWintercoat
+  - LongScienceCoat # OmuStation
   - SeniorResearcherLabCoat
 
 - type: loadoutGroup
@@ -1309,6 +1329,8 @@
   - HeadofSecurityFormalSkirt
   - HoSSummerShirt # goob
   - HoSMJ # goob
+  - HoSParadeUniformMale # Omu
+  - HoSParadeUniformFemale # Omu
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1326,6 +1348,7 @@
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
+  - ClothingHOSWinterJacket # OmuStation
   - HeadofSecurityGreatCoat # Goobstation
   - HeadofSecurityVestWeb # Goobstation
 
@@ -1394,6 +1417,7 @@
   - VeteranOfficerBlackJumpsuit # Goobstation
   - SecurityMJ # Goob
   - SecurityMJSenior # Goob
+  - BlackRedUniform # OmuStation Addon
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1600,6 +1624,7 @@
   loadouts:
   - RegularLabCoat
   - MedicalDoctorWintercoat
+  - ClothingLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
@@ -1690,6 +1715,7 @@
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
+  - ChemLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat # Goobstation
 
 - type: loadoutGroup
@@ -1733,6 +1759,7 @@
   loadouts:
   - ParamedicWindbreaker
   - ParamedicWintercoat
+  - ClothingJacketParamedBlue # OmuStation
   - ParamedicDavidsJacket # Goobstation
   - SeniorPhysicianLabCoat # Goobstation
 
