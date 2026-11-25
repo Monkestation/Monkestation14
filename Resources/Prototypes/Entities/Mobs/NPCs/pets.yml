@@ -948,6 +948,8 @@
     heatDamageThreshold: 800
     coldDamageThreshold: 0
   - type: MeleeWeapon
+    soundHit: # Omu
+        path: /Audio/Effects/pop.ogg
     damage:
       types:
         Blunt: 1
