@@ -72,6 +72,8 @@
         - RawMaterial
         - Ingot
         - SheetPlasma
+  - type: LatheAnnouncing #Monke
+    channels: [Engineering]
 
 - type: entity
   id: CargoTechFab
@@ -142,6 +144,8 @@
         - RawMaterial
         - Ingot
         - SheetPlasma
+  - type: LatheAnnouncing #Monke
+    channels: [Supply]
 
 - type: entity
   id: ScienceTechFab
@@ -299,6 +303,8 @@
         - RawMaterial
         - Ingot
         - SheetPlasma
+  - type: LatheAnnouncing #Monke
+    channels: [Service]
 
 - type: entity
   id: ERTTechFab
